@@ -1,7 +1,12 @@
 [
   {
-    "name": "boing",
-    "planeID": "747",
+    "name": "Boeing 737",
+    "planeID": "1",
     "layout": "1"
+  },
+  {
+    "name": "Boeing 787",
+    "planeID": "2",
+    "layout": "2"
   }
 ]
