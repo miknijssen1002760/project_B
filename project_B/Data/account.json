@@ -1,6 +1,6 @@
 [
   {
-    "ID": 0,
+    "id": 0,
     "username": "",
     "password": "",
     "fullName": "",
@@ -11,7 +11,7 @@
     "isAdmin": false
   },
   {
-    "ID": 1,
+    "id": 1,
     "username": "vijf.vdsoep",
     "password": "123test",
     "fullName": "Vijf van de Soep",
