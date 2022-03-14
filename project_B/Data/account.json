@@ -1,10 +1,25 @@
-{
-  "exclude": [
-    "**/bin",
-    "**/bower_components",
-    "**/jspm_packages",
-    "**/node_modules",
-    "**/obj",
-    "**/platforms"
-  ]
-}
+[
+  {
+    "ID": 0,
+    "username": "",
+    "password": "",
+    "fullName": "",
+    "birthday": "",
+    "phoneNumber": "",
+    "email": "",
+    "euResident": true,
+    "isAdmin": false
+  }
+
+  {
+    "ID": 1,
+    "username": "vijf.vdsoep",
+    "password": "123test",
+    "fullName": "Vijf van de Soep",
+    "birthday": "09061998",
+    "phoneNumber": "0611223344",
+    "email": "soepvdv@wow.co",
+    "euResident": true,
+    "isAdmin": false
+  }
+]
