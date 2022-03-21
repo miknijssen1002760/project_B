@@ -1,16 +1,15 @@
 {
 	{
-		"ID": 1,
+		"id": 1,
 		"planeID": 1,
 		"seatOcc": "12",
 		"date": 1,
 		"duratoin": 1,
 		"destination": "1",
 		"departurePlace": "1"
-	}
-
+	},
 	{
-		"ID": 2,
+		"id": 2,
 		"planeID": 2,
 		"seatOcc": "24",
 		"date": 2,

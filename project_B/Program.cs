@@ -1,4 +1,4 @@
-﻿using System;
+﻿using project_B.Models;
 
 namespace project_B
 {
@@ -6,7 +6,10 @@ namespace project_B
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Flights flight = new Flights();
+            Flight user = flight.getId(2);
+            user.planeID = 7;
+            user.writeToFile();
         }
     }
 }
