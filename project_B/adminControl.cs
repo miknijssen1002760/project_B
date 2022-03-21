@@ -1,4 +1,5 @@
 using System;
+using project_B.Models;
 
 namespace AirlineFood
 {
@@ -166,6 +167,11 @@ namespace AirlineFood
             } else {
                 Console.WriteLine("Verkeerde Input");
             }
+
+            /*planes planes = new planes();
+            plane planeObj = planes.getId(2);
+            planeObj.Name = "BoeingTEST";
+            planeObj.writeToFile();*/
         }
     }
 }
