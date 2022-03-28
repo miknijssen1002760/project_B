@@ -54,14 +54,22 @@ namespace project_B
 
         public void displayFlights(string dest)
         {
-            Flight dis = _flights.Find(i => i.Destination == dest);
-            if(dis != null)
-            {
-                Console.WriteLine($"{dis.Date}, {dis.Duration}, {dis.DeparturePlace}");
+            Flight[] flights = new Flight[5];
+            int index = 0;
+            foreach(Flight i in _flights) {
+                if(i.Destination == dest) {
+                    flights[index] = i;
+                    index++;
+                }
             }
-            else
-            {
-                Console.WriteLine("no flights found");
+            if(index != 0) {
+                for(int i = 0; i < flights.Length; i++) {
+                    if(flights[i]!= null) {
+                        Console.WriteLine($"{flights[i].Date}, {flights[i].Duration}, {flights[i].DeparturePlace}");
+                    }
+                }
+            } else {
+                Console.WriteLine("Geen vlucht gevonden");
             }
         }
     }

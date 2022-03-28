@@ -1,4 +1,5 @@
 ﻿using project_B;
+using System;
 
 namespace project_B
 {
@@ -10,7 +11,8 @@ namespace project_B
             /*Flight currentFlight = flightController.getId(1);
             currentFlight.Destination = "Tokyo";
             currentFlight.writeToFile();*/
-            flightController.displayFlights("Hiroshima");
+            flightController.displayFlights("hiroshima");
+            //flightController.displayFlights(Console.ReadLine());
         }
     }
 }
