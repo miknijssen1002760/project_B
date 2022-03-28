@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace project_B.Models
+namespace project_B
 {
     internal class Flights
     {
         private List<Flight> _flights;
-        string path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"Data/flight.json"));
+        string path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"Data/flights.json"));
         //string path = "C:/Users/mikni/source/repos/project_B/project_B/project_B/Data/flight.json";
 
         public Flights()
@@ -21,7 +21,7 @@ namespace project_B.Models
             Console.WriteLine(path);
             string json = File.ReadAllText(path);
 
-            _flights = JsonSerializer.Deserialize<List<Flight>>(json);
+            _flights= JsonSerializer.Deserialize<List<Flight>>(json);
         }
 
         public void Write()
@@ -51,6 +51,19 @@ namespace project_B.Models
         public Flight getId(int id)
         {
             return _flights.Find(i => i.Id == id);
+        }
+
+        public void displayFlights(string dest)
+        {
+            Flight dis = _flights.Find(i => i.Destination == dest);
+            if(dis != null)
+            {
+                Console.WriteLine($"{dis.Date}, {dis.Duration}, {dis.DeparturePlace}");
+            }
+            else
+            {
+                Console.WriteLine("no flights found");
+            }
         }
     }
 }

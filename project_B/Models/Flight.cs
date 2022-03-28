@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace project_B.Models
+namespace project_B
 {
     internal class Flight
     {
@@ -8,30 +8,27 @@ namespace project_B.Models
         public int Id { get; set; }
 
         [JsonPropertyName("planeID")]
-        public int planeID { get; set; }
-
-        [JsonPropertyName("seatOcc")]
-        public string seatOcc { get; set; }
+        public int PlaneID { get; set; }
 
         [JsonPropertyName("date")]
-        public int date { get; set; }
+        public int Date { get; set; }
 
-        [JsonPropertyName("duratoin")]
-        public int duratoin { get; set; }
+        [JsonPropertyName("duration")]
+        public int Duration { get; set; }
 
         [JsonPropertyName("destination")]
-        public string destination { get; set; }
+        public string Destination { get; set; }
 
         [JsonPropertyName("departurePlace")]
-        public string departurePlace { get; set; }
+        public string DeparturePlace { get; set; }
 
         [JsonIgnore]
         public string Secret { get; set; }
 
         public void writeToFile()
         {
-            Flights acc = new Flights();
-            acc.UpdateList(this);
+            Flights flg = new Flights();
+            flg.UpdateList(this);
         }
     }
 }

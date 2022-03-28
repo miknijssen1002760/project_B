@@ -1,4 +1,4 @@
-﻿using project_B.Models;
+﻿using project_B;
 
 namespace project_B
 {
@@ -6,10 +6,11 @@ namespace project_B
     {
         static void Main(string[] args)
         {
-            Flights flight = new Flights();
-            Flight user = flight.getId(2);
-            user.planeID = 7;
-            user.writeToFile();
+            Flights flightController = new Flights();
+            /*Flight currentFlight = flightController.getId(1);
+            currentFlight.Destination = "Tokyo";
+            currentFlight.writeToFile();*/
+            flightController.displayFlights("Hiroshima");
         }
     }
 }
