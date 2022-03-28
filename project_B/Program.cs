@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project_B;
+using System;
 
 namespace project_B
 {
@@ -6,7 +7,12 @@ namespace project_B
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Flights flightController = new Flights();
+            /*Flight currentFlight = flightController.getId(1);
+            currentFlight.Destination = "Tokyo";
+            currentFlight.writeToFile();*/
+            flightController.displayFlights("hiroshima");
+            //flightController.displayFlights(Console.ReadLine());
         }
     }
 }
