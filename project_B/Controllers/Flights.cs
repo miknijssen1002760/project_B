@@ -9,7 +9,6 @@ namespace project_B
     {
         private List<Flight> _flights;
         string path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"Data/flights.json"));
-        //string path = "C:/Users/mikni/source/repos/project_B/project_B/project_B/Data/flight.json";
 
         public Flights()
         {
