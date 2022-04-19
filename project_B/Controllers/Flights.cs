@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace project_B
 {
-    internal class Flights
+    public class Flights
     {
         private List<Flight> _flights;
         string path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"Data/flights.json"));
@@ -64,8 +64,8 @@ namespace project_B
             }
             if(index != 0) {
                 for(int i = 0; i < flights.Length; i++) {
-                    if(flights[i]!= null) {
-                        Console.WriteLine($"{flights[i].Date}, {flights[i].Duration}, {flights[i].DeparturePlace}");
+                    if (flights[i] != null) {
+                        Console.WriteLine($"{flights[i].Date}, {flights[i].Duration} min, {flights[i].DeparturePlace}");
                     }
                 }
             } else {
