@@ -12,12 +12,6 @@ namespace project_B.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void GetDestinationTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void displayFlightsTest()
         {
             Assert.Fail();
