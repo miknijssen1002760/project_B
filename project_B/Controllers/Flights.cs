@@ -26,9 +26,7 @@ namespace project_B
         public void Write()
         {
             string json = JsonSerializer.Serialize(_flights);
-            //Console.WriteLine(json);
             File.WriteAllText(path, json);
-            Console.WriteLine("write done");
         }
 
         public void UpdateList(Flight acc)
