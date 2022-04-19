@@ -8,7 +8,7 @@ namespace project_B
         public static string GetDestination()
         {
             string Destination;
-            Console.WriteLine("waar gaat de reis naartoe?");
+            Console.Write("waar gaat de reis naartoe? ");
             Destination = Console.ReadLine();
             Console.Clear();
             Console.WriteLine($"Bestemming: {Destination}");
@@ -20,7 +20,7 @@ namespace project_B
             Flight currentFlight = flightController.getId(2);
             currentFlight.Destination = "London";
             currentFlight.writeToFile();
-            flightController.displayFlights(GetDestination());
+            Console.Write(flightController.GetFlights(GetDestination()));
         }
     }
 }

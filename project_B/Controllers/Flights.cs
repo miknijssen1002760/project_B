@@ -52,25 +52,17 @@ namespace project_B
             return _flights.Find(i => i.Id == id);
         }
 
-        public void displayFlights(string dest)
+        public List<Flight> GetFlights(string filter)
         {
-            Flight[] flights = new Flight[5];
-            int index = 0;
-            foreach(Flight i in _flights) {
-                if(i.Destination == dest) {
-                    flights[index] = i;
-                    index++;
+            List<Flight> flights = new List<Flight>();
+            foreach(Flight i in _flights) 
+            {
+                if(i.Destination == filter) 
+                {
+                    flights.Add(i);
                 }
             }
-            if(index != 0) {
-                for(int i = 0; i < flights.Length; i++) {
-                    if (flights[i] != null) {
-                        Console.WriteLine($"{flights[i].Date}, {flights[i].Duration} min, {flights[i].DeparturePlace}");
-                    }
-                }
-            } else {
-                Console.WriteLine("Geen vlucht gevonden");
-            }
+            return flights;
         }
     }
 }
