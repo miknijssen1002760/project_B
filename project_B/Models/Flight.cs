@@ -2,7 +2,7 @@
 
 namespace project_B
 {
-    internal class Flight
+    public class Flight
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
@@ -11,7 +11,7 @@ namespace project_B
         public int PlaneID { get; set; }
 
         [JsonPropertyName("date")]
-        public int Date { get; set; }
+        public string Date { get; set; }
 
         [JsonPropertyName("duration")]
         public int Duration { get; set; }

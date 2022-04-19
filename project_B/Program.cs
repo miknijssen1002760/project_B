@@ -3,21 +3,22 @@ using System;
 
 namespace project_B
 {
-    internal class Program
+    public class Program
     {
-        static string GetDestination()
+        public static string GetDestination()
         {
             string Destination;
             Console.WriteLine("waar gaat de reis naartoe?");
             Destination = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine($"Bestemming: {Destination}");
             return Destination;
         }
         static void Main(string[] args)
         {
             Flights flightController = new Flights();
-            Flight currentFlight = flightController.getId(1);
-            currentFlight.Destination = "Tokyo";
+            Flight currentFlight = flightController.getId(2);
+            currentFlight.Destination = "London";
             currentFlight.writeToFile();
             flightController.displayFlights(GetDestination());
         }
