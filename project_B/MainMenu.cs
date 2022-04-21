@@ -31,6 +31,7 @@ namespace project_B
                         break;
                 }
             }
+            Console.WriteLine("Press enter to continue");
             Console.ReadLine(); 
             Console.Clear();
             Console.WriteLine("====menu====");
@@ -65,6 +66,7 @@ namespace project_B
 
                 }
             }
+            Console.WriteLine("Press enter to continue");
             Console.ReadLine();
             Console.Clear();
         }
