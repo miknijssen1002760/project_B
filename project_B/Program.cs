@@ -1,12 +1,26 @@
-﻿using System;
+﻿using Login.Controllers;
+using Login.Models;
+using System;
 
-namespace project_B
+namespace Login
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Users accounts = new Users();
+            Console.WriteLine(accounts.users);
+            User MainUser = accounts.Login(accounts);
+            if (MainUser == null)
+            {
+                Console.WriteLine("Try again later");
+            }
+            else
+            {
+                Console.WriteLine($"Welcome {MainUser.UserName}, what would you like to do today?");
+            }
         }
+
+
     }
 }
