@@ -12,7 +12,7 @@ namespace project_B.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void displayFlightsTest()
+        public void GetFlightsTest()
         {
             Assert.Fail();
         }
