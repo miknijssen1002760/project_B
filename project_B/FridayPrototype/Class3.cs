@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace project_B.FridayPrototype
 {
-    internal class Class3
+    public static class Registeren
     {
+        public static void Show()
+        {
+            Console.Clear();
+            Console.WriteLine("Insert registratie here");
+        }
     }
 }
