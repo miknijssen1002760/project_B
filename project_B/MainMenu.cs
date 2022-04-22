@@ -1,38 +1,42 @@
-﻿using System;
+﻿using project_B.Views;
+using System;
 
 namespace project_B
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("====account====");
             Console.WriteLine("\r1. Sign in");
             Console.WriteLine("\r2. register");
+            Console.WriteLine("\r3. Reserverming maken");
             Console.Write("\nChoose an option: ");
 
-            bool run = true;
-            while (run == true)
+            bool valid = false;
+            while (valid == false)
             {
+                valid = true;
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        run = false;
-                        Console.WriteLine("dummy sign in text\n");
+
+                        Registeren.Show();
                         break;
 
                     case "2":
-                        run = false;
-                        Console.WriteLine("dummy register text\n");
+                        Login.Show();
+
                         break;
 
                     default:
+                        valid = false;
                         Console.Write("This is not a valid option please try again: ");
                         break;
                 }
             }
-            Console.WriteLine("Press enter to continue");
-            Console.ReadLine(); 
+            Console.WriteLine("press enter to continue");
+            Console.ReadLine();
             Console.Clear();
             Console.WriteLine("====menu====");
             Console.WriteLine("1. beschikbare vluchten");
@@ -40,23 +44,26 @@ namespace project_B
             Console.WriteLine("3. geboekte vluchten");
             Console.Write("\nChoose an option: ");
 
-            run = true;
-            while (run == true)
+            int input = int.Parse(Console.ReadLine());
+
+            valid = false;
+            while (valid == false)
             {
+                valid = true;
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        run = false;
+                        valid = false;
                         Console.WriteLine("insert beschikbare vluchten\n");
                         break;
 
                     case "2":
-                        run = false;
-                        Console.WriteLine("insert vlucht boeken\n");
+                        valid = false;
+                        MakeReservation.Show();
                         break;
 
                     case "3":
-                        run = false;
+                        valid = false;
                         Console.WriteLine("insert geboekte vluchten");
                         break;
 
@@ -66,9 +73,9 @@ namespace project_B
 
                 }
             }
-            Console.WriteLine("Press enter to continue");
+            Console.WriteLine("press enter to continue");
             Console.ReadLine();
             Console.Clear();
+
         }
     }
-}
