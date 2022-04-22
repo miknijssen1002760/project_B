@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace project_B.FridayPrototype
 {
-    internal class Class2
+    static class MakeReservation
     {
+
+        public static void Show()
+        {
+            Console.Clear();
+            Console.WriteLine("insert reservation here");
+        }
     }
 }
