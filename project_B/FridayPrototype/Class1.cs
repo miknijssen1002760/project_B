@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace project_B.FridayPrototype
 {
-    internal class Class1
+    static class Login
     {
+
+        public static void Show()
+        {
+            Console.Clear();
+            Console.WriteLine("Dummy text login");
+        }
+
     }
 }
