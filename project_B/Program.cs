@@ -1,4 +1,4 @@
-﻿using project_B.Views;
+﻿using project_B.FridayPrototype;
 using System;
 
 namespace project_B
