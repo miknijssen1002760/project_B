@@ -1,7 +1,9 @@
+﻿using Login.Controllers;
+using Login.Models;
 ﻿using project_B;
 using System;
 
-namespace project_B
+namespace Login
 {
     public class Program
     {
@@ -24,6 +26,17 @@ namespace project_B
         static void Main(string[] args)
         {
             EditDestination("Tokyo", "London", "New York", "Tokyo");
+            Users accounts = new Users();
+            Console.WriteLine(accounts.users);
+            User MainUser = accounts.Login(accounts);
+            if (MainUser == null)
+            {
+                Console.WriteLine("Try again later");
+            }
+            else
+            {
+                Console.WriteLine($"Welcome {MainUser.UserName}, what would you like to do today?");
+            }
             Flights flightController = new Flights();
             string Destination;
             Console.Write("waar gaat de reis naartoe? ");
@@ -31,5 +44,7 @@ namespace project_B
             Console.WriteLine($"Bestemming: {Destination}");
             Console.WriteLine(flightController.GetFlights(Destination));
         }
+
+
     }
 }

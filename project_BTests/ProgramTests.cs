@@ -1,20 +1,18 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using project_B;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Login.Controllers;
+using Login.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace project_B.Tests
+namespace Login.Tests
 {
     [TestClass()]
     public class ProgramTests
     {
         [TestMethod()]
-        public void GetFlightsTest()
+        public void MainTest()
         {
-            Assert.Fail();
+            string name = "GalaxyRacer";
+            Users whee = new Users();
+            Assert.IsNotNull(whee.FindUser(name));
         }
     }
 }
