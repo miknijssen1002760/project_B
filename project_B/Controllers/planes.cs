@@ -51,5 +51,20 @@ namespace project_B.Models
         {
             return _planes.Find(i => i.PlaneID == id);
         }
+
+        public void listAll()
+        {
+            Console.WriteLine("ID\tName");
+            foreach (plane plane in _planes) 
+            {
+                Console.WriteLine($"{plane.PlaneID}\t{plane.Name}");
+            }
+            Console.WriteLine("");
+        }
+        public int getLastID()
+        {
+            plane last =  _planes[_planes.Count - 1];
+            return last.PlaneID;
+        }
     }
 }

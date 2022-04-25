@@ -7,13 +7,19 @@ namespace AirlineFood
     {
         public static string[][] strToLayout(string layoutStr)
         {
-            string[][] StrSPlit = new string[3][];//COnvert string to string[][]
+            string[][] StrSPlit = new string[3][];//Convert string to string[][]
             return StrSPlit;
         }
         public static int genID()
         {
-            int current = 0;//get last ID
+            planes planes = new planes();
+            int current = planes.getLastID();
             return current + 1;
+        }
+        public static void listPlanes() 
+        {
+            planes planes = new planes();
+            planes.listAll();
         }
         public static void addPlane()
         {
@@ -32,11 +38,31 @@ namespace AirlineFood
         }
         public static void delPlane()
         {
-
+            planes planes = new planes();
+            listPlanes();
+            Console.WriteLine("Welk vliegtuig wil je verwijderen?");
+            int chosen = chooseOptionInt();
+            plane planeT = planes.getId(chosen);
+            Console.WriteLine($"Weet je zeker dat je {planeT.Name} wilt verwijderen?");
+            string ynOpt = Console.ReadLine().ToLower();
+            if (ynOpt == "y")
+            {
+                delPlaneToFile(chosen);
+            }
+            else {
+                Console.WriteLine("Verkeerde Input");
+            }
         }
         public static void changePlaneName() 
-        { 
-        
+        {
+            planes planes = new planes();
+            listPlanes();
+            Console.WriteLine("Welk vliegtuigs naam wil je veranderen?");
+            int chosen = chooseOptionInt();
+            plane planeT = planes.getId(chosen);
+            Console.WriteLine($"Naar wat wil je de naam veranderen van {planeT.Name}");
+            string nameChange = Console.ReadLine();
+            changePlaneNameToFile(chosen, nameChange);
         }
         public static void changePlaneLayout() 
         { 
@@ -44,7 +70,11 @@ namespace AirlineFood
         }
         public static void addPlaneToFile(string name, int planeID, string[][] layout)
         {
-            Console.WriteLine("\n" + $"Name: {name}, PlaneID: {planeID}, Layout: {layout}");
+            plane newPlane = new plane();
+            newPlane.Name = name;
+            newPlane.PlaneID = planeID;
+            newPlane.Layout = layout;
+            newPlane.writeToFile();
 
         }
         public static void delPlaneToFile(int planeID)
@@ -53,14 +83,15 @@ namespace AirlineFood
         }
         public static void changePlaneNameToFile(int planeID, string name)
         {
-
+            planes planes = new planes();
+            plane chPlane = planes.getId(planeID);
+            chPlane.Name = name;
+            chPlane.writeToFile();
         }
         public static void changePlaneLayoutToFile(int planeID, string[][] layout)
         {
 
         }
-
-
 
 
         public static string chooseOption()
@@ -70,6 +101,12 @@ namespace AirlineFood
             Console.WriteLine("--------------------------------------------------------");
 
             if (chosen == null) {chosen = "0";}
+            return chosen;
+        }
+        public static int chooseOptionInt() 
+        {
+            string chosenStr = chooseOption();
+            int chosen = Int16.Parse(chosenStr);
             return chosen;
         }
         public static string chooseMainOption()
@@ -84,6 +121,7 @@ namespace AirlineFood
         }
         public static void choosePlaneOption()
         {
+            planes planes = new planes();
             Console.WriteLine("====VliegtuigBeheer====");
             Console.WriteLine("\t1. Voeg vliegtuig toe");
             Console.WriteLine("\t2. Verwijder Vliegtuig ");
@@ -156,6 +194,7 @@ namespace AirlineFood
         }
         public static void Main(String[] args)
         {
+            planes planes = new planes();
             string chosenMain = chooseMainOption();
 
             if (chosenMain == "1") {
@@ -169,7 +208,7 @@ namespace AirlineFood
             }
 
             /*planes planes = new planes();
-            plane planeObj = planes.getId(2);
+            plane planeObj = planes.();
             planeObj.Name = "BoeingTEST";
             planeObj.writeToFile();*/
         }
