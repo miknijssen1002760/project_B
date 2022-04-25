@@ -14,7 +14,9 @@ namespace project_B.Tests
         [TestMethod()]
         public void GetFlightsTest()
         {
-            Assert.Fail();
+            string name = "London";
+            Flights whee = new Flights();
+            Assert.IsNotNull(whee.GetFlights(name));
         }
     }
 }
