@@ -17,7 +17,7 @@ namespace project_B
 
         public void Load()
         {
-            Console.WriteLine(path);
+            //Console.WriteLine(path);
             string json = File.ReadAllText(path);
 
             _flights= JsonSerializer.Deserialize<List<Flight>>(json);

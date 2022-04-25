@@ -2,6 +2,7 @@
 using Login.Models;
 ﻿using project_B;
 using System;
+using System.Collections.Generic;
 
 namespace Login
 {
@@ -23,11 +24,18 @@ namespace Login
             currentFlight.Destination = dest4;
             currentFlight.writeToFile();
         }
+        static void DisplayList(List<Flight> list)
+        {
+            foreach (Flight flight in list)
+            {
+                Console.WriteLine(flight.Date);
+            }
+        }
         static void Main(string[] args)
         {
-            EditDestination("Tokyo", "London", "New York", "Tokyo");
+            EditDestination("London", "London", "New York", "Tokyo");
             Users accounts = new Users();
-            Console.WriteLine(accounts.users);
+            //Console.WriteLine(accounts.users);
             User MainUser = accounts.Login(accounts);
             if (MainUser == null)
             {
@@ -42,7 +50,7 @@ namespace Login
             Console.Write("waar gaat de reis naartoe? ");
             Destination = Console.ReadLine();
             Console.WriteLine($"Bestemming: {Destination}");
-            Console.WriteLine(flightController.GetFlights(Destination));
+            DisplayList(flightController.GetFlights(Destination));
         }
 
 
