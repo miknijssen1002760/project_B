@@ -77,6 +77,15 @@ namespace Login.Controllers
                     CurrentUser = Create();
                     return CurrentUser;
                 }
+                else if (ans == "n")
+                {
+                    Login(x);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid response");
+                    Login(x);
+                }
             }
             if (x.PassCheck(CurrentUser.Password))
             {
