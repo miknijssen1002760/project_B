@@ -26,9 +26,13 @@ namespace Login
         }
         static void DisplayList(List<Flight> list)
         {
+            if (list.Count == 0)
+            {
+                Console.WriteLine("Er zijn geen vluchten gevonden.");
+            }
             foreach (Flight flight in list)
             {
-                Console.WriteLine(flight.Date);
+                Console.WriteLine($"{flight.Date} {flight.Duration} {flight.Destination}");
             }
         }
         static void Main(string[] args)
@@ -52,7 +56,5 @@ namespace Login
             Console.WriteLine($"Bestemming: {Destination}");
             DisplayList(flightController.GetFlights(Destination));
         }
-
-
     }
 }
