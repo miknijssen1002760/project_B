@@ -25,12 +25,11 @@ namespace project_B
                 {
                     case "1":
 
-                        Registeren.Show();
+                        Login.Show();
                         break;
 
                     case "2":
-                        Login.Show();
-
+                        Registeren.Show();
                         break;
 
                     default:
@@ -42,8 +41,6 @@ namespace project_B
         }
         public static void FlightMenu()
         {
-            Console.WriteLine("press enter to continue");
-            Console.ReadLine();
             Console.Clear();
             Console.WriteLine("====menu====");
             Console.WriteLine("1. beschikbare vluchten");
@@ -82,6 +79,7 @@ namespace project_B
 
                 }
             }
+            Console.WriteLine("press enter to continue");
             Console.ReadLine();
             Console.Clear();
 

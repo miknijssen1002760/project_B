@@ -13,19 +13,8 @@ namespace project_B.FridayPrototype
         {
             Console.Clear();
             Console.WriteLine("Dummy text login\n");
-            Console.WriteLine("Press x to return to menu");
-
-            var KeyPressed = Console.ReadKey(true);
-            switch (KeyPressed.KeyChar)
-            {
-                case 'x':
-                    Program.FlightMenu();
-                    break;
-                case 'X':
-                    Program.FlightMenu();
-                    break;
-            }
+            Console.WriteLine("press enter to continue");
+            Console.ReadLine();
         }
-
     }
 }
