@@ -12,7 +12,19 @@ namespace project_B.FridayPrototype
         public static void Show()
         {
             Console.Clear();
-            Console.WriteLine("Dummy text login");
+            Console.WriteLine("Dummy text login\n");
+            Console.WriteLine("Press x to return to menu");
+
+            var KeyPressed = Console.ReadKey(true);
+            switch (KeyPressed.KeyChar)
+            {
+                case 'x':
+                    Program.FlightMenu();
+                    break;
+                case 'X':
+                    Program.FlightMenu();
+                    break;
+            }
         }
 
     }
