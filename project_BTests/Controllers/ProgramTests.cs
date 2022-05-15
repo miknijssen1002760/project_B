@@ -12,11 +12,24 @@ namespace project_B.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void GetFlightsTest()
+        public void GetFlightsTest_pass()
+        {
+            
+            string name = "London";
+            Flights whee = new Flights();
+            Assert.IsNotNull(whee.GetFlights(name));
+        }
+        /*public void GetFlightsTest_fail()
         {
             string name = "London";
             Flights whee = new Flights();
             Assert.IsNotNull(whee.GetFlights(name));
+        }*/
+
+        [TestMethod()]
+        public void UpdateListTest()
+        {
+            Assert.Fail();
         }
     }
 }
