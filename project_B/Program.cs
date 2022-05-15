@@ -17,7 +17,7 @@ namespace project_B
         {
             const int startX = 0;
             const int startY = 1;
-            const int optionsPerLine = 2;
+            const int optionsPerLine = 1;
             const int spacingPerLine = 14;
             int currentSelection = 0;
 
