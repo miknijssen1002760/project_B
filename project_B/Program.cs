@@ -17,7 +17,7 @@ namespace project_B
         {
             const int startX = 0;
             const int startY = 1;
-            const int optionsPerLine = 1;
+            const int optionsPerLine = 2;
             const int spacingPerLine = 14;
             int currentSelection = 0;
 
@@ -52,12 +52,28 @@ namespace project_B
                                 currentSelection -= optionsPerLine;
                             break;
                         }
+
                     case ConsoleKey.DownArrow:
                         {
                             if (currentSelection + optionsPerLine < options.Length)
                                 currentSelection += optionsPerLine;
                             break;
                         }
+
+                    case ConsoleKey.LeftArrow:
+                        {
+                            if (currentSelection % optionsPerLine > 0)
+                                currentSelection--;
+                            break;
+                        }
+
+                    case ConsoleKey.RightArrow:
+                        {
+                            if (currentSelection % optionsPerLine < optionsPerLine - 1)
+                                currentSelection++;
+                            break;
+                        }
+
                     case ConsoleKey.Escape:
                         {
                             if (canCancel)
@@ -104,7 +120,6 @@ namespace project_B
                     break;
 
                 case 1:
-                    ;
                     MakeReservation.Show();
                     break;
 
