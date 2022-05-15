@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_B.FridayPrototype
 {
-    public static class Registeren
+    public static class Registreren
     {
         public static void Show()
         {

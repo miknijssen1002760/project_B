@@ -5,84 +5,117 @@ namespace project_B
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
             HomeScreen();
             FlightMenu();
+
         }
+
+        public static int MultipleChoice(bool canCancel, string CurrentMenu, params string[] options)
+        {
+            const int startX = 0;
+            const int startY = 1;
+            const int optionsPerLine = 1;
+            const int spacingPerLine = 14;
+            int currentSelection = 0;
+
+            ConsoleKey key;
+            Console.CursorVisible = false;
+
+            do
+            {
+                Console.Clear();
+
+                Console.Write(CurrentMenu);
+
+                for (int i = 0; i < options.Length; i++)
+                {
+                    Console.SetCursorPosition(startX + (i % optionsPerLine) * spacingPerLine, startY + i / optionsPerLine);
+
+                    if (i == currentSelection)
+                        Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.Write(options[i]);
+
+                    Console.ResetColor();
+                }
+
+                key = Console.ReadKey(true).Key;
+
+                switch (key)
+                {
+                    case ConsoleKey.UpArrow:
+                        {
+                            if (currentSelection >= optionsPerLine)
+                                currentSelection -= optionsPerLine;
+                            break;
+                        }
+                    case ConsoleKey.DownArrow:
+                        {
+                            if (currentSelection + optionsPerLine < options.Length)
+                                currentSelection += optionsPerLine;
+                            break;
+                        }
+                    case ConsoleKey.Escape:
+                        {
+                            if (canCancel)
+                                return -1;
+                            break;
+                        }
+                }
+            } while (key != ConsoleKey.Enter);
+
+            Console.CursorVisible = true;
+
+            return currentSelection;
+        }
+
         public static void HomeScreen()
         {
-            Console.WriteLine("====account====");
-            Console.WriteLine("\r1. Sign in");
-            Console.WriteLine("\r2. register");
-            Console.Write("\nChoose an option: ");
-
-            bool valid = false;
-            while (valid == false)
+            string[] LoginMenu = { "Login", "Register", "Exit" };
+            int CurrentSelection = MultipleChoice(true, "===Account===", LoginMenu);
+            
+            switch (CurrentSelection)
             {
-                valid = true;
-                switch (Console.ReadLine())
-                {
-                    case "1":
+                case 0:
+                    Login.Show();
+                    break;
+                case 1:
+                    Registreren.Show();
+                    break;
+                case 2:
+                    Environment.Exit(0);
+                    break;
 
-                        Login.Show();
-                        break;
 
-                    case "2":
-                        Registeren.Show();
-                        break;
-
-                    default:
-                        valid = false;
-                        Console.Write("This is not a valid option please try again: ");
-                        break;
-                }
             }
         }
         public static void FlightMenu()
         {
-            Console.Clear();
-            Console.WriteLine("====menu====");
-            Console.WriteLine("1. beschikbare vluchten");
-            Console.WriteLine("2. vlucht boeken");
-            Console.WriteLine("3. geboekte vluchten");
-            Console.WriteLine("4. Exit");
-            Console.Write("\nChoose an option: ");
+            string[] FlightMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten", "Exit" };
+            int CurrentSelection = MultipleChoice(true, "===Menu===", FlightMenu);
 
-            bool valid = false;
-            while (valid == false)
+            switch (CurrentSelection)
             {
-                valid = true;
-                switch (Console.ReadLine())
-                {
-                    case "1":
-                        AvailableFlights.Show();
-                        break;
+                case 0:
+                    AvailableFlights.Show();
+                    break;
 
-                    case "2":
-                        ;
-                        MakeReservation.Show();
-                        break;
+                case 1:
+                    ;
+                    MakeReservation.Show();
+                    break;
 
-                    case "3":
-                        Reservations.Show();
-                        break;
+                case 2:
+                    Reservations.Show();
+                    break;
 
-                    case "4":
-                        Environment.Exit(0);
-                        break;
-                        
-                    default:
-                        valid = false;
-                        Console.WriteLine("This is not a valid option please try again: ");
-                        break;
-
-                }
+                case 3:
+                    Environment.Exit(0);
+                    break;
             }
-            Console.WriteLine("press enter to continue");
-            Console.ReadLine();
-            Console.Clear();
-
         }
     }
 }
