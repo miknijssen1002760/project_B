@@ -1,4 +1,4 @@
-﻿using project_B.FridayPrototype;
+﻿using project_B.Views;
 using System;
 
 namespace project_B
@@ -92,7 +92,7 @@ namespace project_B
         {
             string[] LoginMenu = { "Login", "Register", "Exit" };
             int CurrentSelection = MultipleChoice(true, "===Account===", LoginMenu);
-            
+
             switch (CurrentSelection)
             {
                 case 0:

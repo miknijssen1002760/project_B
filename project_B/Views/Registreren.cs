@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_B.FridayPrototype
+namespace project_B.Views
 {
-    static class Login
+    public static class Registreren
     {
-
         public static void Show()
         {
             Console.Clear();
-            Console.WriteLine("Dummy text login\n");
+            Console.WriteLine("Insert registratie here\n");
             Console.WriteLine("press enter to continue");
             Console.ReadLine();
         }
     }
 }
+

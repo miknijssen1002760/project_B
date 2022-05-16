@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_B.FridayPrototype
+
+namespace project_B.Views
 {
-    static class MakeReservation
+    static class AvailableFlights
     {
 
         public static void Show()
         {
             Console.Clear();
-            Console.WriteLine("insert reservation here\n");
+            Console.WriteLine("Insert Available Flights\n");
             Console.WriteLine("Press x to return to menu");
 
             var KeyPressed = Console.ReadKey(true);

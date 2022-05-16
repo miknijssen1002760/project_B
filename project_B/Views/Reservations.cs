@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_B.FridayPrototype
+namespace project_B.Views
 {
     static class Reservations
     {
