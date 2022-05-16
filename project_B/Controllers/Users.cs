@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using Bookings.Models;
 
 namespace Login.Controllers
 {
@@ -36,6 +37,7 @@ namespace Login.Controllers
             newUser.UserName = Console.ReadLine();
             Console.WriteLine("Enter Password");
             newUser.Password = Console.ReadLine();
+            newUser.BookedFlights = new List<Flight>();
             i += 1;
             users.Add(newUser);
             Write();
@@ -72,10 +74,14 @@ namespace Login.Controllers
             {
                 Console.WriteLine("No account found, would you like to make one? [y/n]");
                 string ans = Console.ReadLine();
-                if (ans == "y")
+                if ((ans == "y")||(ans == "Y"))
                 {
                     CurrentUser = Create();
                     return CurrentUser;
+                }
+                else
+                {
+                    return null;
                 }
             }
             if (x.PassCheck(CurrentUser.Password))
@@ -86,6 +92,12 @@ namespace Login.Controllers
             {
                 return null;
             }
+        }
+
+        public void Book(Flight flight, User user)
+        {
+            user.BookedFlights.Add(flight);
+            Load();
         }
     }
 
