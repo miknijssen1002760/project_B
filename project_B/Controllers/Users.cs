@@ -97,7 +97,7 @@ namespace Login.Controllers
         public void Book(Flight flight, User user)
         {
             user.BookedFlights.Add(flight);
-            Load();
+            Write();
         }
     }
 
