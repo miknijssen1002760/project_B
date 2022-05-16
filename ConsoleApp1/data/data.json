@@ -17,15 +17,11 @@
 
   {
     "plane": "Boeing 787",
-    "company": "1"
-    "origin": "Rotterdam"
-    "destination": "1"
+    "company": "1",
+    "origin": "Rotterdam",
+    "destination": "1",
     "duration" :  145 
 
 
   }
-]
-
-
-
 ]
