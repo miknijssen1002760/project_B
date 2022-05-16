@@ -11,7 +11,7 @@ namespace ConsoleApp1.Controllers
     internal class Flights
     {
         private List<Flight> _flights;
-        string path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"Data/flights.json"));
+        string path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"Data/flights.json"));
 
 
         public Flights()
