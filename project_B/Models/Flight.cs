@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
+using Bookings.Controllers;
 
-namespace project_B
+namespace Bookings.Models
 {
     public class Flight
     {
