@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Bookings.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace project_B
+namespace Bookings.Controllers
 {
     public class Flights
     {
