@@ -5,7 +5,7 @@ using Bookings.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Login
+namespace Program
 {
     public class Program
     {
