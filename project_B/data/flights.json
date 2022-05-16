@@ -1,0 +1,11 @@
+[
+  {
+    "standaartPrijs": 1,
+    "boekingsKosten": 15,
+    "luchthavenBelasting": 10,
+    "eersteKlas": 3,
+    "toeslagStoelen": 1.50,
+    "extraBaggage": 25,
+    "duration":  1
+  }
+]
