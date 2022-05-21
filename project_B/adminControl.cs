@@ -1,4 +1,5 @@
 using System;
+using project_B.Controllers;
 using project_B.Models;
 
 namespace AirlineFood
@@ -10,12 +11,15 @@ namespace AirlineFood
             string[][] StrSPlit = new string[3][];//Convert string to string[][]
             return StrSPlit;
         }
-        public static int genID()
+
+        #region ModPlanes
+        public static int genIDPlanes()
         {
             planes planes = new planes();
             int current = planes.getLastID();
             return current + 1;
         }
+
         public static void listPlanes() 
         {
             planes planes = new planes();
@@ -25,13 +29,13 @@ namespace AirlineFood
         {
             Console.WriteLine("Voeg Vliegtuig toe aan Systeem:");
             Console.WriteLine("Naam: ");
-            string? name = Console.ReadLine();
+            string name = Console.ReadLine();
 
             Console.WriteLine("\nLayout: (RowNumber + SeatLetter : vb. 1A 1B 1C 1D 2A 2B...)");
-            string? layoutStr = Console.ReadLine();
+            string layoutStr = Console.ReadLine();
             string[][] layout = strToLayout(layoutStr);
 
-            int ID = genID();
+            int ID = genIDPlanes();
             Console.WriteLine("\n" + $"ID assigned: {ID}");
 
             addPlaneToFile(name, ID, layout);
@@ -92,12 +96,58 @@ namespace AirlineFood
         {
 
         }
+        #endregion
+        #region ModFLights
+
+        public static int genIDFlights()
+        {
+            Flights flights = new Flights();
+            int current = flights.getLastID();
+            return current + 1;
+        }
+        public static void addFlight() 
+        {
+            Console.WriteLine("Voeg Vlucht toe aan Systeem:");
+            Console.WriteLine("Welk vliegtuig is gekoppeld aan de vlucht?");
+            listPlanes();
+            int planeID = chooseOptionInt();
+
+            Console.WriteLine("Datum vlucht (dd/mm/YYYY): ");
+            string date = Console.ReadLine();
+
+            Console.WriteLine("Vluchtduur (min): ");
+            int duration = chooseOptionInt();
+
+            Console.WriteLine("Bestemming: ");
+            string destination = Console.ReadLine();
+
+            Console.WriteLine("Vertrekplaats: ");
+            string departure = Console.ReadLine();
+
+            int ID = genIDFlights();
+            Console.WriteLine("\n" + $"ID assigned: {ID}");
+
+            addFlightToFile(ID, planeID, date, duration, destination, departure);
+        }
+
+        public static void addFlightToFile(int ID, int planeID, string date, int duration, string destination, string departure) 
+        {
+            Flight newFlight = new Flight();
+            newFlight.Id = ID;
+            newFlight.PlaneID = planeID;
+            newFlight.Date = date;
+            newFlight.Duration = duration;
+            newFlight.DeparturePlace = departure;
+            newFlight.writeToFile();
+        }
+
+        #endregion
 
 
         public static string chooseOption()
         {
             Console.Write("\nVoer in Getal: ");
-            string? chosen = Console.ReadLine();
+            string chosen = Console.ReadLine();
             Console.WriteLine("--------------------------------------------------------");
 
             if (chosen == null) {chosen = "0";}
@@ -177,7 +227,7 @@ namespace AirlineFood
 
             if (chosen == "1")
             {
-                //tbm
+                addFlight();
             }
             else if (chosen == "2")
             {
