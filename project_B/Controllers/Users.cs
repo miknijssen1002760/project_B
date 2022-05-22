@@ -31,6 +31,7 @@ namespace project_B.Controllers
 
         public User Create()
         {
+            Console.Clear();
             User newUser = new User();
             newUser.Id = i;
             Console.WriteLine("Enter Username: ");
@@ -100,6 +101,7 @@ namespace project_B.Controllers
             //    return null;
             //}
 
+            Console.Clear();
             Console.WriteLine("Username: ");
             User CurrentUser = x.FindUser(Console.ReadLine());
             if (CurrentUser == null)
