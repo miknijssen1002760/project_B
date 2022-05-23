@@ -69,5 +69,18 @@ namespace project_B.Controllers
             }
             return flights;
         }
+
+        public void listAll()
+        {
+            Console.WriteLine("ID\tDatum\tBestemming\tVertrekplaats\tVluchtduur");
+            foreach (Flight flight in _flights)
+            {
+                if (flight.Active == true)
+                {
+                    Console.WriteLine($"{flight.PlaneID}\t{flight.Date}\t{flight.Destination}\t{flight.DeparturePlace}\t{flight.Duration}");
+                }
+            }
+            Console.WriteLine("");
+        }
     }
 }

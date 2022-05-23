@@ -23,6 +23,9 @@ namespace project_B.Models
         [JsonPropertyName("departurePlace")]
         public string DeparturePlace { get; set; }
 
+        [JsonPropertyName("active")]
+        public bool Active { get; set; }
+
         [JsonIgnore]
         public string Secret { get; set; }
 

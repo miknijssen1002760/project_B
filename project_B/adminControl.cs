@@ -102,6 +102,12 @@ namespace AirlineFood
         #endregion
         #region ModFLights
 
+        public static void listFlights() 
+        {
+            Flights flights = new Flights();
+            flights.listAll();
+        }
+
         public static int genIDFlights()
         {
             Flights flights = new Flights();
@@ -112,8 +118,8 @@ namespace AirlineFood
         {
             Console.WriteLine("Voeg Vlucht toe aan Systeem:");
             Console.WriteLine("Welk vliegtuig is gekoppeld aan de vlucht?");
-            listPlanes();
-            int planeID = chooseOptionInt();
+            listFlights();
+            int flightID = genIDFlights();
 
             Console.WriteLine("Datum vlucht (dd/mm/YYYY): ");
             string date = Console.ReadLine();
@@ -130,7 +136,7 @@ namespace AirlineFood
             int ID = genIDFlights();
             Console.WriteLine("\n" + $"ID assigned: {ID}");
 
-            addFlightToFile(ID, planeID, date, duration, destination, departure);
+            addFlightToFile(ID, flightID, date, duration, destination, departure);
         }
 
         public static void addFlightToFile(int ID, int planeID, string date, int duration, string destination, string departure) 
@@ -142,17 +148,35 @@ namespace AirlineFood
             newFlight.Duration = duration;
             newFlight.Destination = destination;
             newFlight.DeparturePlace = departure;
+            newFlight.Active = true;
             newFlight.writeToFile();
         }
 
         public static void deleteFlight() 
         {
-            
+            Flights flights = new Flights();
+            listFlights();
+            Console.WriteLine("Welke vlucht wil je verwijderen?");
+            int chosen = chooseOptionInt();
+            Flight flightT = flights.getId(chosen);
+            Console.WriteLine($"Weet je zeker dat je {flightT.Id} wilt verwijderen?");
+            string ynOpt = Console.ReadLine().ToLower();
+            if (ynOpt == "y")
+            {
+                deleteFlightToFile(chosen);
+            }
+            else
+            {
+                Console.WriteLine("Verkeerde Input");
+            }
         }
 
-        public static void deleteFlightToFile() 
-        { 
-        
+        public static void deleteFlightToFile(int flightID) 
+        {
+            Flights flights = new Flights();
+            Flight delFlight = flights.getId(flightID);
+            delFlight.Active = false;
+            delFlight.writeToFile();
         }
         #endregion
 
@@ -244,7 +268,7 @@ namespace AirlineFood
             }
             else if (chosen == "2")
             {
-                //tbm
+                deleteFlight();
             }
             else if (chosen == "3")
             {
