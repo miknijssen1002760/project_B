@@ -83,7 +83,10 @@ namespace AirlineFood
         }
         public static void delPlaneToFile(int planeID)
         {
-
+            planes planes = new planes();
+            plane delPlane = planes.getId(planeID);
+            delPlane.Available = false;
+            delPlane.writeToFile();
         }
         public static void changePlaneNameToFile(int planeID, string name)
         {
@@ -137,10 +140,20 @@ namespace AirlineFood
             newFlight.PlaneID = planeID;
             newFlight.Date = date;
             newFlight.Duration = duration;
+            newFlight.Destination = destination;
             newFlight.DeparturePlace = departure;
             newFlight.writeToFile();
         }
 
+        public static void deleteFlight() 
+        {
+            
+        }
+
+        public static void deleteFlightToFile() 
+        { 
+        
+        }
         #endregion
 
 
