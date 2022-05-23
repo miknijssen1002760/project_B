@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Controllers
+namespace Project_B.Controllers
 {
     internal class Flights
     {
