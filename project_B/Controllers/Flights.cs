@@ -72,12 +72,12 @@ namespace project_B.Controllers
 
         public void listAll()
         {
-            Console.WriteLine("ID\tDatum\tBestemming\tVertrekplaats\tVluchtduur");
+            Console.WriteLine("ID\tDatum\tBestemming\t\tVertrekplaats\tVluchtduur");
             foreach (Flight flight in _flights)
             {
                 if (flight.Active == true)
                 {
-                    Console.WriteLine($"{flight.PlaneID}\t{flight.Date}\t{flight.Destination}\t{flight.DeparturePlace}\t{flight.Duration}");
+                    Console.WriteLine($"{flight.PlaneID}\t{flight.Date}\t{flight.Destination}\t\t{flight.DeparturePlace}\t{flight.Duration}");
                 }
             }
             Console.WriteLine("");

@@ -178,6 +178,20 @@ namespace AirlineFood
             delFlight.Active = false;
             delFlight.writeToFile();
         }
+
+        public static void editFlight() 
+        { 
+            //what flight do you want to change
+            //display all flights
+            //display selected flight
+            //what do you want to change?
+            //gotofunction
+        }
+
+        public static void editFlightToFile() 
+        { 
+            
+        }
         #endregion
 
 
@@ -272,7 +286,7 @@ namespace AirlineFood
             }
             else if (chosen == "3")
             {
-                //tbm
+                editFlight();
             }
             else
             {
