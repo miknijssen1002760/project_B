@@ -69,6 +69,14 @@ namespace Login
                     Console.WriteLine("Invalid Character");
                 }
             }
+            if (ans2 == "5")
+            {
+                Console.WriteLine("Enter old password");
+                string old = Console.ReadLine();
+                Console.WriteLine("Enter new password");
+                string newp = Console.ReadLine();
+                accounts.passwordChange(old, newp, currentUser);
+            }
         }
 
 

@@ -98,6 +98,15 @@ namespace Login.Controllers
         {
             return null;
         }
+
+        public void passwordChange(string oldPass, string newPass, User x)
+        {
+            if (oldPass == x.Password)
+            {
+                x.Password = newPass;
+                Write();
+            }
+        }
     }
 
 }
