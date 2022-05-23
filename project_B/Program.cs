@@ -22,10 +22,10 @@ namespace project_B
             switch (CurrentSelection)
             {
                 case 0:
-                    Login.LoginTest();
+                    Login.LoginFun();
                     break;
                 case 1:
-                    Registreren.Show();
+                    Registreren.Register();
                     break;
                 case 2:
                     Environment.Exit(0);

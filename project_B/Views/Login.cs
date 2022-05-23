@@ -1,59 +1,97 @@
 ﻿using project_B.Controllers;
 using project_B.Models;
 using System;
+using System.Threading;
 using System.Collections.Generic;
 
 namespace project_B.Views
 {
     public class Login
     {
-        static void EditDestination(string dest1, string dest2, string dest3, string dest4)
+        public static void LoginFun()
         {
-            Flights flightController = new Flights();
-            Flight currentFlight = flightController.getId(1);
-            currentFlight.Destination = dest1;
-            currentFlight.writeToFile();
-            currentFlight = flightController.getId(2);
-            currentFlight.Destination = dest2;
-            currentFlight.writeToFile();
-            currentFlight = flightController.getId(3);
-            currentFlight.Destination = dest3;
-            currentFlight.writeToFile();
-            currentFlight = flightController.getId(4);
-            currentFlight.Destination = dest4;
-            currentFlight.writeToFile();
-        }
-        static void DisplayList(List<Flight> list)
-        {
-            foreach (Flight flight in list)
-            {
-                Console.WriteLine(flight.Date);
-            }
-        }
-        public static void LoginTest()
-        {
-            EditDestination("London", "London", "New York", "Tokyo");
+            Console.Clear();
             Users accounts = new Users();
-            Flights flightController = new Flights();
-            //Console.WriteLine(accounts.users);
-            User MainUser = accounts.Login(accounts);
-            if (MainUser == null)
+            User currentUser = new User();
+
+            Console.WriteLine("Enter email: ");
+            string mail = Console.ReadLine();
+            if (accounts.FindUser(mail) == null)
             {
-                Console.WriteLine("Try again later");
+                string[] RegisterAnswer = { "Yes", "No", "Exit" };
+                int CurrentSelection = MenuCreator.MultipleChoice(true, "No account found, would you like to make one?", RegisterAnswer);
+
+                switch (CurrentSelection)
+                {
+                    case 0:
+                        Registreren.Register();
+                        break;
+
+                    case 1:
+                        LoginFun();  
+                        break;
+
+                    case 2:
+                        Environment.Exit(0);
+                        break;
+
+                }
             }
+
             else
             {
-                Console.WriteLine($"Welcome {MainUser.UserName}, what would you like to do today?");
+                Console.WriteLine("Enter password: ");
+                string pass = Console.ReadLine();
+                currentUser = accounts.Login(accounts, mail, pass);
+                if (currentUser == null)
+                {
+                    Console.WriteLine("Password Incorrect please try again");
+                    Thread.Sleep(1500);
+                    Login.LoginFun();
+                }
+            }  
+
+
+
+
+
+
+
+                //Console.WriteLine($"Hello {currentUser.UserName}, what would you like to do today?");
+                //Console.WriteLine("[1] Book Flight\n[2] Check Flights\n[3] Log Out\n[4] Delete Account");
+                //string ans2 = Console.ReadLine();
+                //if (ans2 == "1")
+                //{
+                //    Console.WriteLine();
+                //}
+
+                //if (ans2 == "2")
+                //{
+                //    Console.WriteLine();
+                //}
+
+                //if (ans2 == "3")
+                //{
+                //    currentUser = accounts.logout();
+                //}
+
+                //if (ans2 == "4")
+                //{
+                //    Console.WriteLine("Are you sure you want to remove your account? [y/n]");
+                //    string ans3 = Console.ReadLine();
+                //    if (ans3 == "y")
+                //    {
+                //        accounts.remove(currentUser, accounts);
+                //    }
+                //    else if (ans3 == "n")
+                //    {
+                //        Console.WriteLine("Bruh");
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("Invalid Character");
+                //    }
+                //}
             }
-            Flight currentFlight = flightController.getId(1);
-            accounts.Book(currentFlight, MainUser);
-            string Destination;
-            Console.Write("waar gaat de reis naartoe? ");
-            Destination = Console.ReadLine();
-            Console.WriteLine($"Bestemming: {Destination}");
-            DisplayList(flightController.GetFlights(Destination));
         }
-
-
     }
-}
