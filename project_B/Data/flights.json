@@ -4,8 +4,9 @@
     "planeID": 1,
     "date": "01/03/2022",
     "duration": 50,
-    "destionation": "London",
-    "departurePlace": "Amsterdam"
+    "destination": "London",
+    "departurePlace": "Amsterdam",
+    "active":  true
 
   },
   {
@@ -13,27 +14,27 @@
     "planeID": 2,
     "date": "02/03/2022",
     "duration": 70,
-    "destionation": "Tokyo",
-    "departurePlace": "Amsterdam"
-
+    "destination": "Tokyo",
+    "departurePlace": "Amsterdam",
+    "active": true
   },
   {
     "id": 3,
     "planeID": 3,
     "date": "03/03/2022",
     "duration": 90,
-    "destionation": "New York",
-    "departurePlace": "Amsterdam"
-
+    "destination": "New York",
+    "departurePlace": "Amsterdam",
+    "active":  false
   },
   {
     "id": 4,
     "planeID": 4,
     "date": "04/03/2022",
     "duration": 80,
-    "destionation": "Tokyo",
-    "departurePlace": "Amsterdam"
-
+    "destination": "Tokyo",
+    "departurePlace": "Amsterdam",
+    "active":  true
   }
 ]
 

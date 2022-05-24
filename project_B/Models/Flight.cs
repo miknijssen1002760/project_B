@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using Bookings.Controllers;
+using project_B.Controllers;
 
-namespace Bookings.Models
+namespace project_B.Models
 {
     public class Flight
     {
@@ -22,6 +22,9 @@ namespace Bookings.Models
 
         [JsonPropertyName("departurePlace")]
         public string DeparturePlace { get; set; }
+
+        [JsonPropertyName("active")]
+        public bool Active { get; set; }
 
         [JsonIgnore]
         public string Secret { get; set; }

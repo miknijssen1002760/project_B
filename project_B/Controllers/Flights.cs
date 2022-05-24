@@ -1,10 +1,10 @@
-﻿using Bookings.Models;
+﻿using project_B.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace Bookings.Controllers
+namespace project_B.Controllers
 {
     public class Flights
     {
@@ -51,6 +51,12 @@ namespace Bookings.Controllers
             return _flights.Find(i => i.Id == id);
         }
 
+        public int getLastID()
+        {
+            Flight last = _flights[_flights.Count - 1];
+            return last.Id;
+        }
+
         public List<Flight> GetFlights(string filter)
         {
             List<Flight> flights = new List<Flight>();
@@ -62,6 +68,19 @@ namespace Bookings.Controllers
                 }
             }
             return flights;
+        }
+
+        public void listAll()
+        {
+            Console.WriteLine("ID\tDatum\tBestemming\t\tVertrekplaats\tVluchtduur");
+            foreach (Flight flight in _flights)
+            {
+                if (flight.Active == true)
+                {
+                    Console.WriteLine($"{flight.PlaneID}\t{flight.Date}\t{flight.Destination}\t\t{flight.DeparturePlace}\t{flight.Duration}");
+                }
+            }
+            Console.WriteLine("");
         }
     }
 }
