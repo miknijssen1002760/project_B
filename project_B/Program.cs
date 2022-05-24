@@ -48,7 +48,6 @@ namespace Program
                 Console.WriteLine($"Welcome {MainUser.UserName}, what would you like to do today?");
             }
             Flight currentFlight = flightController.getId(1);
-            accounts.Book(currentFlight, MainUser);
             string Destination;
             Console.Write("waar gaat de reis naartoe? ");
             Destination = Console.ReadLine();
