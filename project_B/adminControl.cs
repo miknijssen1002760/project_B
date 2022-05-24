@@ -4,7 +4,7 @@ using project_B.Models;
 
 namespace AirlineFood
 {
-    internal class Program
+    public class AdminControl
     {
         public static string[][] strToLayout(string layoutStr)
         {
@@ -293,7 +293,7 @@ namespace AirlineFood
                 Console.WriteLine("Verkeerde Input");
             }
         }
-        public static void Main(String[] args)
+        public static void adminMain()
         {
             planes planes = new planes();
             string chosenMain = chooseMainOption();
