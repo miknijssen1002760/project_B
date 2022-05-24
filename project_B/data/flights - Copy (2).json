@@ -1,0 +1,162 @@
+[
+  {
+    "rij": 1,
+    "datum": "06-06-2022",
+    "dag": "Maandag",
+    "vluchtNum": "A737",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  },
+  {
+    "rij": 2,
+    "datum": "07-06-2022",
+    "dag": "Dinsdag",
+    "vluchtNum": "A330",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  },
+  {
+    "rij": 3,
+    "datum": "08-06-2022",
+    "dag": "Woensdag",
+    "vluchtNum": "B787",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  },
+  {
+    "rij": 4,
+    "datum": "09-06-2022",
+    "dag": "Donderdag",
+    "vluchtNum": "A330",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  },
+  {
+    "rij": 5,
+    "datum": "10-06-2022",
+    "dag": "Vrijdag",
+    "vluchtNum": "B787",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  },
+  {
+    "rij": 6,
+    "datum": "11-06-2022",
+    "dag": "Zaterdag",
+    "vluchtNum": "A737",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  },
+  {
+    "rij": 7,
+    "datum": "12-06-2022",
+    "dag": "Zondag",
+    "vluchtNum": "B787",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  },
+  {
+    "rij": 8,
+    "datum": "13-06-2022",
+    "dag": "Maandag",
+    "vluchtNum": "B787",
+    "uren": [
+      {
+        "rij": 1,
+        "vluchtUur": "17:00 - 18:45"
+      },
+      {
+        "rij": 2,
+        "vluchtUur": "18:45 - 20:30"
+      },
+      {
+        "rij": 3,
+        "vluchtUur": "20:30 - 22:15"
+      }
+    ]
+  }
+]
