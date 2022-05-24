@@ -1,7 +1,7 @@
 ﻿using Login.Controllers;
 using Login.Models;
-﻿using Bookings.Controllers;
-using Bookings.Models;
+﻿using project_B.Controllers;
+using project_B.Models;
 using System;
 using System.Collections.Generic;
 
