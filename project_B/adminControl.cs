@@ -307,11 +307,6 @@ namespace AirlineFood
             } else {
                 Console.WriteLine("Verkeerde Input");
             }
-
-            /*planes planes = new planes();
-            plane planeObj = planes.();
-            planeObj.Name = "BoeingTEST";
-            planeObj.writeToFile();*/
         }
     }
 }
