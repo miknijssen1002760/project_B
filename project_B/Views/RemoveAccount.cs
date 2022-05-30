@@ -14,7 +14,7 @@ namespace project_B.Views
         {
             Users accounts = new Users();
             string[] options = { "Yes", "No" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Menu===", options);
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to delete your account?", options);
 
             switch (CurrentSelection)
             {

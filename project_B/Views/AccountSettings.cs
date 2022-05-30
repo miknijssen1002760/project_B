@@ -10,8 +10,8 @@ namespace project_B.Views
     {
         public static void Settings()
         {
-            string[] Settings = { "Delete Account", "exit" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Menu===", Settings);
+            string[] Settings = { "Delete Account", "Vorig Menu", "exit" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Account Settings===", Settings);
 
             switch (CurrentSelection)
             {
@@ -20,6 +20,10 @@ namespace project_B.Views
                     break;
 
                 case 1:
+                    Program.MainMenu();
+                    break;
+
+                case 2:
                     Environment.Exit(0);
                     break;
             }
