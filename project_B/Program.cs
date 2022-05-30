@@ -1,5 +1,6 @@
 ﻿using project_B.Views;
 using project_B.Controllers;
+using project_B.Models;
 using System;
 
 namespace project_B
@@ -42,7 +43,7 @@ namespace project_B
             switch (CurrentSelection)
             {
                 case 0:
-                    AvailableFlights.Show();
+                    FlightTest.Test();
                     break;
 
                 case 1:
