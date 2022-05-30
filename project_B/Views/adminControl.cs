@@ -215,7 +215,7 @@ namespace project_B.Views
         
         public static void choosePlaneOption()
         {
-            string[] PlaneOptions = { "Vliegtuig Toevoegen", "Vliegtuig Verwijderen", "Vliegtuig naam wijzigen", "Wijzig layout", "exit" };
+            string[] PlaneOptions = { "Vliegtuig Toevoegen", "Vliegtuig Verwijderen", "Vliegtuig naam wijzigen", "Wijzig layout", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Plane Options===", PlaneOptions);
 
             switch (CurrentSelection)
@@ -223,17 +223,24 @@ namespace project_B.Views
                 case 0:
                     addPlane();
                     break;
+
                 case 1:
                     delPlane();
                     break;
+
                 case 2:
                     changePlaneName();
                     break;
+
                 case 3:
                     changePlaneLayout();
                     break;
 
                 case 4:
+                    adminOptions();
+                    break;
+
+                case 5:
                     Environment.Exit(0);
                     break;
             }
@@ -266,7 +273,7 @@ namespace project_B.Views
         }
         public static void chooseFlightOption()
         {
-            string[] FlightOptions = { "Vlucht Toevoegen", "Vlucht Verwijderen", "Vlucht bijwerken", "exit" };
+            string[] FlightOptions = { "Vlucht Toevoegen", "Vlucht Verwijderen", "Vlucht Bijwerken", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Flight Options===", FlightOptions);
 
             switch (CurrentSelection)
@@ -274,13 +281,20 @@ namespace project_B.Views
                 case 0:
                     addFlight();
                     break;
+
                 case 1:
                     deleteFlight();
                     break;
+
                 case 2:
                     editFlight();
                     break;
+
                 case 3:
+                    adminOptions();
+                    break;
+
+                case 4:
                     Environment.Exit(0);
                     break;
             }
@@ -289,7 +303,7 @@ namespace project_B.Views
 
         public static void adminOptions()
         {
-            string[] AdminOptions = { "Vliegtuig Options", "User Options", "Vlucht Options", "exit" };
+            string[] AdminOptions = { "Vliegtuig Options", "User Options", "Vlucht Options", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Admin Options===", AdminOptions);
 
             switch (CurrentSelection)
@@ -297,13 +311,20 @@ namespace project_B.Views
                 case 0:
                     choosePlaneOption();
                     break;
+
                 case 1:
                     chooseUserOption();
                     break;
+
                 case 2:
                     chooseFlightOption();
                     break;
+
                 case 3:
+                    Program.MainMenu();
+                    break;
+
+                case 4:
                     Environment.Exit(0);
                     break;
 
