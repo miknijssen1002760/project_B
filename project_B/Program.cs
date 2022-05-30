@@ -1,11 +1,11 @@
-﻿using ConsoleApp1.Controllers;
+﻿using Program.Controllers;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace ConsoleApp1
+namespace Program
 {
     internal class Program
     {

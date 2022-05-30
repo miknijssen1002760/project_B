@@ -1,11 +1,11 @@
-﻿using ConsoleApp1.Models;
+﻿using Program.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace ConsoleApp1.Controllers
+namespace Program.Controllers
 {
     public class FlightService
     {
