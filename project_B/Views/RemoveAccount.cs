@@ -24,7 +24,7 @@ namespace project_B.Views
                     break;
 
                 case 1:
-                    Program.FlightMenu();
+                    Program.MainMenu();
                     break;
             }
 

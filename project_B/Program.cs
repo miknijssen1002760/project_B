@@ -11,7 +11,7 @@ namespace project_B
         public static void Main(string[] args)
         {
             HomeScreen();
-            FlightMenu();
+            MainMenu();
 
         }
 
@@ -35,10 +35,10 @@ namespace project_B
 
             }
         }
-        public static void FlightMenu()
+        public static void MainMenu()
         {
-            string[] FlightMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten","Account Settings", "Exit" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Menu===", FlightMenu);
+            string[] MainMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten","Account Settings", "Admin Settings", "Exit" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Menu===", MainMenu);
 
             switch (CurrentSelection)
             {
@@ -55,9 +55,14 @@ namespace project_B
                     break;
 
                 case 3:
+                    AccountSettings.Settings();
                     break;
 
                 case 4:
+                    AdminControl.adminOptions();
+                    break;
+
+                case 5:
                     Environment.Exit(0);
                     break;
             }

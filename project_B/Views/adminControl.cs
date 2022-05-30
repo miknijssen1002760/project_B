@@ -1,8 +1,9 @@
 ﻿using System;
 using project_B.Controllers;
 using project_B.Models;
+using project_B.Views;
 
-namespace AirlineFood
+namespace project_B.Views
 {
     public class AdminControl
     {
@@ -211,46 +212,30 @@ namespace AirlineFood
             int chosen = Int16.Parse(chosenStr);
             return chosen;
         }
-        public static string chooseMainOption()
-        {
-            Console.WriteLine("Wat wil je beheren?:");
-            Console.WriteLine("\t1. Vliegtuigen");
-            Console.WriteLine("\t2. Gebruikers");
-            Console.WriteLine("\t3. Vluchten");
-
-            string chosen = chooseOption();
-            return chosen;
-        }
+        
         public static void choosePlaneOption()
         {
-            planes planes = new planes();
-            Console.WriteLine("====VliegtuigBeheer====");
-            Console.WriteLine("\t1. Voeg vliegtuig toe");
-            Console.WriteLine("\t2. Verwijder Vliegtuig ");
-            Console.WriteLine("\t3. Wijzig Naam Vliegtuig");
-            Console.WriteLine("\t4. Wijzig Stoellayout Vliegtuig");
+            string[] PlaneOptions = { "Vliegtuig Toevoegen", "Vliegtuig Verwijderen", "Vliegtuig naam wijzigen", "Wijzig layout", "exit" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Plane Options===", PlaneOptions);
 
-            string chosen = chooseOption();
+            switch (CurrentSelection)
+            {
+                case 0:
+                    addPlane();
+                    break;
+                case 1:
+                    delPlane();
+                    break;
+                case 2:
+                    changePlaneName();
+                    break;
+                case 3:
+                    changePlaneLayout();
+                    break;
 
-            if (chosen == "1")
-            {
-                addPlane();
-            }
-            else if (chosen == "2")
-            {
-                delPlane();
-            }
-            else if (chosen == "3")
-            {
-                changePlaneName();
-            }
-            else if (chosen == "4")
-            {
-                changePlaneLayout();
-            }
-            else
-            {
-                Console.WriteLine("Verkeerde Input");
+                case 4:
+                    Environment.Exit(0);
+                    break;
             }
         }
         public static void chooseUserOption()
@@ -281,50 +266,47 @@ namespace AirlineFood
         }
         public static void chooseFlightOption()
         {
-            Console.WriteLine("====VluchtBeheer====");
-            Console.WriteLine("\t1. Voeg Vlucht toe");
-            Console.WriteLine("\t2. Verwijder Vlucht");
-            Console.WriteLine("\t3. Wijzig Vlucht");
+            string[] FlightOptions = { "Vlucht Toevoegen", "Vlucht Verwijderen", "Vlucht bijwerken", "exit" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Flight Options===", FlightOptions);
 
-            string chosen = chooseOption();
+            switch (CurrentSelection)
+            {
+                case 0:
+                    addFlight();
+                    break;
+                case 1:
+                    deleteFlight();
+                    break;
+                case 2:
+                    editFlight();
+                    break;
+                case 3:
+                    Environment.Exit(0);
+                    break;
+            }
 
-            if (chosen == "1")
-            {
-                addFlight();
-            }
-            else if (chosen == "2")
-            {
-                deleteFlight();
-            }
-            else if (chosen == "3")
-            {
-                editFlight();
-            }
-            else
-            {
-                Console.WriteLine("Verkeerde Input");
-            }
         }
-        public static void adminMain()
-        {
-            planes planes = new planes();
-            string chosenMain = chooseMainOption();
 
-            if (chosenMain == "1")
+        public static void adminOptions()
+        {
+            string[] AdminOptions = { "Vliegtuig Options", "User Options", "Vlucht Options", "exit" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Admin Options===", AdminOptions);
+
+            switch (CurrentSelection)
             {
-                choosePlaneOption();
-            }
-            else if (chosenMain == "2")
-            {
-                chooseUserOption();
-            }
-            else if (chosenMain == "3")
-            {
-                chooseFlightOption();
-            }
-            else
-            {
-                Console.WriteLine("Verkeerde Input");
+                case 0:
+                    choosePlaneOption();
+                    break;
+                case 1:
+                    chooseUserOption();
+                    break;
+                case 2:
+                    chooseFlightOption();
+                    break;
+                case 3:
+                    Environment.Exit(0);
+                    break;
+
             }
         }
     }
