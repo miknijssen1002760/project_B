@@ -36,7 +36,7 @@ namespace project_B
         }
         public static void FlightMenu()
         {
-            string[] FlightMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten", "Exit" };
+            string[] FlightMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten","Account Settings", "Exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Menu===", FlightMenu);
 
             switch (CurrentSelection)
@@ -54,6 +54,9 @@ namespace project_B
                     break;
 
                 case 3:
+                    break;
+
+                case 4:
                     Environment.Exit(0);
                     break;
             }
