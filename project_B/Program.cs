@@ -1,11 +1,11 @@
-﻿using ConsoleApp1.Controllers;
+﻿using Program.Controllers;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace ConsoleApp1
+namespace Program
 {
     internal class Program
     {
@@ -24,7 +24,7 @@ namespace ConsoleApp1
             int luchthavenBelasting = 10;
             double eersteKlas = 3 * vluchtduur;
             double toeslagStoelen = 1.50 * vluchtduur; //stoelen eerste Rij, laatste Rij en Rijen nooduitgang 
-            //int extraBaggage = 25; //per koffer
+            int extraBaggage = 25; //per koffer
 
 
 

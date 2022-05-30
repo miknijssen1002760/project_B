@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Controllers
+namespace Program.Controllers
 {
     internal class Flight2
     {

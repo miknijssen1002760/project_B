@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.Models;
+﻿using Program.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Controllers
+namespace Program.Controllers
 {
     public class Flight
     {
