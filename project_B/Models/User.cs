@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using project_B.Models;
 
 namespace project_B.Models
+
 {
     public class User
     {

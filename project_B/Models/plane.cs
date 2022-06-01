@@ -16,6 +16,7 @@ namespace project_B.Models
         [JsonPropertyName("available")]
         public bool Available { get; set; }
 
+
         [JsonIgnore]
         public string Secret { get; set; }
 

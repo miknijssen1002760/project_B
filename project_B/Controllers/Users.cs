@@ -6,12 +6,14 @@ using System.IO;
 using System.Text.Json;
 
 namespace project_B.Controllers
+
 {
     public class Users
     {
         public List<User> users;
         string Path = @"Data/Users.json";
         public int i = 3;
+
 
         public Users()
         {
@@ -45,6 +47,7 @@ namespace project_B.Controllers
             {
                 return null;
             }
+
         }
         public void Write()
         {

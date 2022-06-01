@@ -7,7 +7,6 @@
     "destination": "London",
     "departurePlace": "Amsterdam",
     "active": true
-
   },
   {
     "id": 2,
@@ -37,4 +36,3 @@
     "active": true
   }
 ]
-
