@@ -321,7 +321,7 @@ namespace project_B.Views
                     break;
 
                 case 3:
-                    Program.MainMenu();
+                    project_B.MainMenu();
                     break;
 
                 case 4:

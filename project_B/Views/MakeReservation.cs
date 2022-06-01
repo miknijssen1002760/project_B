@@ -19,10 +19,10 @@ namespace project_B.Views
             switch (KeyPressed.KeyChar)
             {
                 case 'x':
-                    Program.MainMenu();
+                    project_B.MainMenu();
                     break;
                 case 'X':
-                    Program.MainMenu();
+                    project_B.MainMenu();
                     break;
             }
         }

@@ -20,7 +20,7 @@ namespace project_B.Views
                     break;
 
                 case 1:
-                    Program.MainMenu();
+                    project_B.MainMenu();
                     break;
 
                 case 2:

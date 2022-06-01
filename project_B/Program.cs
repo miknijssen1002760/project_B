@@ -5,9 +5,9 @@ using System;
 
 
 
-namespace Program
+namespace project_B
 {
-    public class Program
+    public class project_B
     {
 
         public static void Main(string[] args)

@@ -20,11 +20,11 @@ namespace project_B.Views
             {
                 case 0:
                     accounts.remove(Login.currentUser, accounts);
-                    Program.HomeScreen();
+                    project_B.HomeScreen();
                     break;
 
                 case 1:
-                    Program.MainMenu();
+                    project_B.MainMenu();
                     break;
             }
 
