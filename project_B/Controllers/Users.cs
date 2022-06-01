@@ -31,7 +31,7 @@ namespace project_B.Controllers
             return users.Find(i => i.UserName == name);
         }
 
-        public User Create(string mail, string pass, string firstname, string lastname, DateTime birthday, string phonenumber)
+        public User Create(string mail, string pass, string firstname, string lastname, string birthday, string phonenumber)
         {
             User newUser = new User();
             if (emailCheck(mail))
@@ -142,7 +142,7 @@ namespace project_B.Controllers
             }
         }
 
-        public bool birthChange(string Password, DateTime newBirth, User x)
+        public bool birthChange(string Password, string newBirth, User x)
         {
             if (Password == x.Password)
             {

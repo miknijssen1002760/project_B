@@ -19,10 +19,23 @@ namespace project_B.Views
             Console.WriteLine("Enter email: ");
             string mail = Console.ReadLine();
 
+            Console.WriteLine("What is your first name: ");
+            string firstname = Console.ReadLine();
+
+            Console.WriteLine("What is your last name: ");
+            string lastname = Console.ReadLine();
+
+            Console.WriteLine("What is your birthday DD/MM/YYYY: ");
+            string birthday = Console.ReadLine();
+            
+            Console.WriteLine("What is your phone number: ");
+            string phonenumber = Console.ReadLine();
+
             Console.WriteLine("Enter password: ");
             string pass = Console.ReadLine();
 
-            currentUser = accounts.Create(mail, pass, accounts);
+
+            currentUser = accounts.Create(mail, pass, firstname, lastname, birthday, phonenumber);
             if (currentUser == null)
             {
                 Console.WriteLine("Invalid email or email is already in use");

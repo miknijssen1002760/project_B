@@ -13,12 +13,12 @@ namespace project_B.Models
         [JsonPropertyName("lastname")]
         public string LastName { get; set; }
         [JsonPropertyName("birthdate")]
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
         [JsonPropertyName("username")]
         public string UserName { get; set; }
         [JsonPropertyName("password")]
         public string Password { get; set; }
         [JsonPropertyName("phonenumber")]
-        public string PhoneNumber { get; set; };
+        public string PhoneNumber { get; set; }
     }
 }
