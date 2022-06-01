@@ -51,5 +51,29 @@ namespace project_B.Views
 
         }
 
+        public static void ChangeBirthday()
+        {
+
+        }
+
+        public static void ChangeName()
+        {
+
+        }
+
+        public static void ChangeNumber()
+        {
+
+        }
+
+        public static void ChangeEmail()
+        {
+
+        }
+
+        public static void ChangePassword()
+        {
+
+        }
     }
 }
