@@ -1,17 +1,19 @@
-﻿using Login.Models;
+﻿using project_B.Models;
+using project_B.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-using project_B.Models;
 
-namespace Login.Controllers
+namespace project_B.Controllers
+
 {
     public class Users
     {
         public List<User> users;
         string Path = @"Data/Users.json";
-        public int i = 3; 
+        public int i = 3;
+
 
         public Users()
         {
@@ -29,19 +31,22 @@ namespace Login.Controllers
             return users.Find(i => i.UserName == name);
         }
 
-        public User Create()
+        public User Create(string name, string pass, Users x)
         {
             User newUser = new User();
-            newUser.Id = i;
-            Console.WriteLine("Enter Username: ");
-            newUser.UserName = Console.ReadLine();
-            Console.WriteLine("Enter Password");
-            newUser.Password = Console.ReadLine();
-            newUser.BookedFlights = new List<Flight>();
-            i += 1;
-            users.Add(newUser);
-            Write();
-            return newUser;
+            newUser.Id = 3;
+            if (emailCheck(name, x))
+            {
+                newUser.UserName = name;
+                newUser.Password = pass;
+                users.Add(newUser);
+                Write();
+                return newUser;
+            }
+            else
+            {
+                return null;
+            }
 
         }
         public void Write()
@@ -49,61 +54,55 @@ namespace Login.Controllers
             File.WriteAllText(Path, JsonSerializer.Serialize<List<User>>(users));
         }
 
-        public bool PassCheck(string pass)
+        public bool PassCheck(string pass, string passAttempt)
         {
-            for (int i = 0; i < 3; i++)
+            if (passAttempt == pass)
             {
-                Console.WriteLine("Enter password");
-                string passAttempt = Console.ReadLine();
-                if (passAttempt == pass)
-                {
-                    return true;
-                }
-                else 
-                    Console.WriteLine("Wrong password");
-            }
-            Console.WriteLine("Too many wrong attempts");
-            return false;
-        }
-
-        public User Login(Users x)
-        {
-            Console.WriteLine("Username: ");
-            User CurrentUser = x.FindUser(Console.ReadLine());
-            if (CurrentUser == null)
-            {
-                Console.WriteLine("No account found, would you like to make one? [y/n]");
-                string ans = Console.ReadLine();
-                if ((ans == "y")||(ans == "Y"))
-                {
-                    CurrentUser = Create();
-                    return CurrentUser;
-                }
-                else if (ans == "n")
-                {
-                    Login(x);
-                }
-                else
-                {
-                    Console.WriteLine("Invalid response");
-                    Login(x);
-                }
-            }
-            if (x.PassCheck(CurrentUser.Password))
-            {
-                return CurrentUser;
+                return true;
             }
             else
             {
-                return null;
+                return false;
             }
         }
 
-        public void Book(Flight flight, User user)
+        public User Login(Users x, string userName, string passWord)
         {
-            user.BookedFlights.Add(flight);
+            User CurrentUser = x.FindUser(userName);
+            if (CurrentUser == null)
+            {
+                return null;
+            }
+            else
+            {
+                if (x.PassCheck(CurrentUser.Password, passWord))
+                {
+                    return CurrentUser;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+        }
+
+        public bool emailCheck(string email, Users x)
+        {
+            return (email.Contains("@") && x.FindUser(email) == null);
+        }
+
+        public void remove(User user, Users x)
+        {
+            users.Remove(user);
             Write();
         }
-    }
 
+        public User logout()
+        {
+            return null;
+        }
+
+
+    }
 }

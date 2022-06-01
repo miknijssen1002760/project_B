@@ -14,7 +14,8 @@ namespace project_B.Models
         public string[][] Layout { get; set; }
 
         [JsonPropertyName("available")]
-        public bool Available {get; set; }
+        public bool Available { get; set; }
+
 
         [JsonIgnore]
         public string Secret { get; set; }

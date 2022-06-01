@@ -55,7 +55,8 @@ namespace project_B.Models
         public void listAll()
         {
             Console.WriteLine("ID\tName");
-            foreach (plane plane in _planes) 
+            foreach (plane plane in _planes)
+
             {
                 if (plane.Available == true)
                 {
@@ -66,7 +67,7 @@ namespace project_B.Models
         }
         public int getLastID()
         {
-            plane last =  _planes[_planes.Count - 1];
+            plane last = _planes[_planes.Count - 1];
             return last.PlaneID;
         }
     }

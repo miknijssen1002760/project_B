@@ -6,8 +6,7 @@
     "duration": 50,
     "destination": "London",
     "departurePlace": "Amsterdam",
-    "active":  true
-
+    "active": true
   },
   {
     "id": 2,
@@ -25,7 +24,7 @@
     "duration": 90,
     "destination": "New York",
     "departurePlace": "Amsterdam",
-    "active":  false
+    "active": false
   },
   {
     "id": 4,
@@ -34,8 +33,6 @@
     "duration": 80,
     "destination": "Tokyo",
     "departurePlace": "Amsterdam",
-    "active":  true
+    "active": true
   }
 ]
-
-
