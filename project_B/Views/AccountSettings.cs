@@ -18,7 +18,7 @@ namespace project_B.Views
             switch (CurrentSelection)
             {
                 case 0:
-                    RemoveAccount.DeleteAccount();
+                    DeleteAccount();
                     break;
 
                 case 1:
