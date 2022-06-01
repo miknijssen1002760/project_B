@@ -3,7 +3,9 @@ using project_B.Controllers;
 using project_B.Models;
 using System;
 
-namespace project_B
+
+
+namespace Program
 {
     public class Program
     {

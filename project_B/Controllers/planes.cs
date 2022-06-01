@@ -56,6 +56,7 @@ namespace project_B.Models
         {
             Console.WriteLine("ID\tName");
             foreach (plane plane in _planes)
+
             {
                 if (plane.Available == true)
                 {

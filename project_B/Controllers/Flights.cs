@@ -22,6 +22,7 @@ namespace project_B.Controllers
             string json = File.ReadAllText(path);
 
             _flights = JsonSerializer.Deserialize<List<Flight>>(json);
+
         }
 
         public void Write()
@@ -60,9 +61,10 @@ namespace project_B.Controllers
         public List<Flight> GetFlights(string filter)
         {
             List<Flight> flights = new List<Flight>();
-            foreach (Flight i in _flights)
+
+            foreach(Flight i in _flights) 
             {
-                if (i.Destination == filter)
+                if(i.Destination == filter) 
                 {
                     flights.Add(i);
                 }
