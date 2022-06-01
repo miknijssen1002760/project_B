@@ -209,7 +209,7 @@ namespace Program
 
 
 
-                int extraBaggage = 0;
+                extraBaggage = 0;
             extraBaggageToegevoegd:
                 Console.Clear();
                 Console.WriteLine($"Gekozen land " + GEKOZEN_BESTEMMING);
