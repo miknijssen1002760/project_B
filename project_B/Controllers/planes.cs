@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace project_B.Models
+namespace project_B.Controllers
 {
     internal class planes
     {
