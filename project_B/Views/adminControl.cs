@@ -21,6 +21,15 @@ namespace project_B.Views
             planes planes = new planes();
             planes.listAll();
         }
+
+        public static void listAllPlanes()
+        {
+            listPlanes();
+            Console.WriteLine("Druk ENTER om terug te gaan");
+            Console.ReadLine();
+            choosePlaneOption();
+        }
+
         public static void addPlane()
         {
             Console.WriteLine("Voeg Vliegtuig toe aan Systeem:");
@@ -124,6 +133,15 @@ namespace project_B.Views
             Users users = new Users();
             users.listAll();
         }
+
+        public static void listAllUsers()
+        {
+            listUsers();
+            Console.WriteLine("Druk ENTER om terug te gaan");
+            Console.ReadLine();
+            chooseUserOption();
+        }
+
         public static void addUser()
         {
             Console.WriteLine("Voeg User toe aan Systeem:");
@@ -182,6 +200,14 @@ namespace project_B.Views
             flights.listAll();
         }
 
+        public static void listAllFlights()
+        {
+            listFlights();
+            Console.WriteLine("Druk ENTER om terug te gaan");
+            Console.ReadLine();
+            chooseFlightOption();
+        }
+
         public static int genIDFlights()
         {
             Flights flights = new Flights();
@@ -192,8 +218,8 @@ namespace project_B.Views
         {
             Console.WriteLine("Voeg Vlucht toe aan Systeem:");
             Console.WriteLine("Welk vliegtuig is gekoppeld aan de vlucht?");
-            listFlights();
-            int flightID = genIDFlights();
+            listPlanes();
+            int flightID = chooseOptionInt();
 
             Console.WriteLine("Datum vlucht (dd/mm/YYYY): ");
             string date = Console.ReadLine();
@@ -289,32 +315,36 @@ namespace project_B.Views
 
         public static void choosePlaneOption()
         {
-            string[] PlaneOptions = { "Vliegtuig Toevoegen", "Vliegtuig Verwijderen", "Vliegtuig naam wijzigen", "Wijzig layout", "Vorig Menu", "exit" };
+            string[] PlaneOptions = { "Toon vliegtuigen", "Vliegtuig Toevoegen", "Vliegtuig Verwijderen", "Vliegtuig naam wijzigen", "Wijzig layout", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Plane Options===", PlaneOptions);
 
             switch (CurrentSelection)
             {
                 case 0:
-                    addPlane();
+                    listAllPlanes();
                     break;
 
                 case 1:
-                    delPlane();
+                    addPlane();
                     break;
 
                 case 2:
-                    changePlaneName();
+                    delPlane();
                     break;
 
                 case 3:
-                    changePlaneLayout();
+                    changePlaneName();
                     break;
 
                 case 4:
-                    adminOptions();
+                    changePlaneLayout();
                     break;
 
                 case 5:
+                    adminOptions();
+                    break;
+
+                case 6:
                     Environment.Exit(0);
                     break;
             }
@@ -323,16 +353,20 @@ namespace project_B.Views
 
         public static void chooseUserOption()
         {
-            string[] UserOptions = { "Voeg gebruiker toe", "Verwijder Gebruiker", "Vorig Menu", "exit" };
+            string[] UserOptions = { "Toon gebruikers", "Voeg gebruiker toe", "Verwijder Gebruiker", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===GebruikerBeheer===", UserOptions);
 
             switch (CurrentSelection)
             {
                 case 0:
-                    addUser();
+                    listAllUsers();
                     break;
 
                 case 1:
+                    addUser();
+                    break;
+
+                case 2:
                     delUser();
                     break;
 
@@ -349,28 +383,32 @@ namespace project_B.Views
       
         public static void chooseFlightOption()
         {
-            string[] FlightOptions = { "Vlucht Toevoegen", "Vlucht Verwijderen", "Vlucht Bijwerken", "Vorig Menu", "exit" };
+            string[] FlightOptions = { "Toon vluchten", "Vlucht Toevoegen", "Vlucht Verwijderen", "Vlucht Bijwerken", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Flight Options===", FlightOptions);
 
             switch (CurrentSelection)
             {
                 case 0:
-                    addFlight();
+                    listAllFlights();
                     break;
 
                 case 1:
-                    deleteFlight();
+                    addFlight();
                     break;
 
                 case 2:
-                    editFlight();
+                    deleteFlight();
                     break;
 
                 case 3:
-                    adminOptions();
+                    editFlight();
                     break;
 
                 case 4:
+                    adminOptions();
+                    break;
+
+                case 5:
                     Environment.Exit(0);
                     break;
             }
