@@ -250,7 +250,7 @@ namespace project_B.Views
             Console.WriteLine("====GebruikerBeheer====");
             Console.WriteLine("\t1. Voeg gebruiker toe");
             Console.WriteLine("\t2. Verwijder gebruiker");
-            Console.WriteLine("\t3. Wijzig gebruiker");
+            
 
             string chosen = chooseOption();
 
@@ -262,10 +262,7 @@ namespace project_B.Views
             {
                 //tbm
             }
-            else if (chosen == "3")
-            {
-                //tbm
-            }
+
             else
             {
                 Console.WriteLine("Verkeerde Input");
