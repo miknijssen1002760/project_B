@@ -36,7 +36,7 @@ namespace project_B.Controllers
             User newUser = new User();
             if (emailCheck(mail))
             {
-                newUser.UserName = mail;
+                newUser.UserName = mail.ToLower();
                 newUser.Password = pass;
                 newUser.FirstName = firstname;
                 newUser.LastName = lastname;
@@ -107,13 +107,13 @@ namespace project_B.Controllers
             return null;
         }
 
-        public bool emailChange(string Password, string email, User x)
+        public bool emailChange(string Password, string newEmail, User x)
         {
             if (Password == x.Password)
             {
-                if (emailCheck(email))
+                if (emailCheck(newEmail))
                 {
-                    x.UserName = email;
+                    x.UserName = newEmail;
                     Write();
                     return true;
                 }

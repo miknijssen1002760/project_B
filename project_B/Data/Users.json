@@ -1,22 +1,3 @@
 [
-  {
-    "id": 1,
-    "username": "GalaxyRacer",
-    "password": "Spider-Man"
-  },
-  {
-    "id": 2,
-    "username": "Flash",
-    "password": "Jay_Garr1ck"
-  },
-  {
-    "id": 3,
-    "username": "morbius@sweep.com",
-    "password": "TheMovieOfAllTime"
-  },
-  {
-    "id": 3,
-    "username": "paas@haas.nl",
-    "password": "eieren"
-  }
+  
 ]
