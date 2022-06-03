@@ -34,6 +34,8 @@ namespace project_B.Views
             Console.WriteLine("\n" + $"ID assigned: {ID}");
 
             addPlaneToFile(name, ID, layout);
+
+            choosePlaneOption();
         }
         public static void delPlane()
         {
@@ -42,16 +44,14 @@ namespace project_B.Views
             Console.WriteLine("Welk vliegtuig wil je verwijderen?");
             int chosen = chooseOptionInt();
             plane planeT = planes.getId(chosen);
-            Console.WriteLine($"Weet je zeker dat je {planeT.Name} wilt verwijderen?");
+            Console.WriteLine($"Weet je zeker dat je {planeT.Name} wilt verwijderen?(j/n)");
             string ynOpt = Console.ReadLine().ToLower();
-            if (ynOpt == "y")
+            if (ynOpt == "j")
             {
                 delPlaneToFile(chosen);
             }
-            else
-            {
-                Console.WriteLine("Verkeerde Input");
-            }
+
+            choosePlaneOption();
         }
         public static void changePlaneName()
         {
@@ -63,6 +63,8 @@ namespace project_B.Views
             Console.WriteLine($"Naar wat wil je de naam veranderen van {planeT.Name}");
             string nameChange = Console.ReadLine();
             changePlaneNameToFile(chosen, nameChange);
+
+            choosePlaneOption();
         }
         public static void changePlaneLayout()
         {
@@ -74,6 +76,8 @@ namespace project_B.Views
             Console.WriteLine($"Naar wat wil je de layout veranderen van {planeT.Name} (A of B)");
             string layoutChange = Console.ReadLine();
             changePlaneLayoutToFile(chosen, layoutChange);
+
+            choosePlaneOption();
         }
 
         public static void changePlaneLayoutToFile(int planeID, string layout)
@@ -146,9 +150,11 @@ namespace project_B.Views
             User user = users.Create(userName, passWord, fName, lName, bDay, telNumber);
             if (user != null)
             {
-                Console.WriteLine($"Succesfully created {user.UserName}");
+                Console.WriteLine($"Succesvol {user.UserName} aangemaakt");
             }
             else { Console.WriteLine("Wrong email"); }
+
+            chooseUserOption();
         }
         public static void delUser()
         {
@@ -157,16 +163,14 @@ namespace project_B.Views
             Console.WriteLine("Welke user wil je verwijderen?");
             string chosen = Console.ReadLine();
             User user = users.FindUser(chosen);
-            Console.WriteLine($"Weet je zeker dat je {user.UserName} wilt verwijderen?");
+            Console.WriteLine($"Weet je zeker dat je {user.UserName} wilt verwijderen?(j/n)");
             string ynOpt = Console.ReadLine().ToLower();
-            if (ynOpt == "y")
+            if (ynOpt == "j")
             {
                 users.remove(user, users);
             }
-            else
-            {
-                Console.WriteLine("Verkeerde Input");
-            }
+
+            chooseUserOption();
         }
 
         #endregion
@@ -207,6 +211,8 @@ namespace project_B.Views
             Console.WriteLine("\n" + $"ID assigned: {ID}");
 
             addFlightToFile(ID, flightID, date, duration, destination, departure);
+
+            chooseFlightOption();
         }
 
         public static void addFlightToFile(int ID, int planeID, string date, int duration, string destination, string departure)
@@ -229,16 +235,14 @@ namespace project_B.Views
             Console.WriteLine("Welke vlucht wil je verwijderen?");
             int chosen = chooseOptionInt();
             Flight flightT = flights.getId(chosen);
-            Console.WriteLine($"Weet je zeker dat je {flightT.Id} wilt verwijderen?");
+            Console.WriteLine($"Weet je zeker dat je {flightT.Id} wilt verwijderen?(j/n)");
             string ynOpt = Console.ReadLine().ToLower();
-            if (ynOpt == "y")
+            if (ynOpt == "j")
             {
                 deleteFlightToFile(chosen);
             }
-            else
-            {
-                Console.WriteLine("Verkeerde Input");
-            }
+
+            chooseFlightOption();
         }
 
         public static void deleteFlightToFile(int flightID)
@@ -256,6 +260,8 @@ namespace project_B.Views
             //display selected flight
             //what do you want to change?
             //gotofunction
+
+            chooseFlightOption();
         }
 
         public static void editFlightToFile()
@@ -312,6 +318,7 @@ namespace project_B.Views
                     Environment.Exit(0);
                     break;
             }
+            Console.WriteLine("");
         }
 
         public static void chooseUserOption()
@@ -337,6 +344,7 @@ namespace project_B.Views
                     Environment.Exit(0);
                     break;
             }
+            Console.WriteLine("");
         }
       
         public static void chooseFlightOption()
@@ -366,7 +374,7 @@ namespace project_B.Views
                     Environment.Exit(0);
                     break;
             }
-
+            Console.WriteLine("");
         }
 
         public static void adminOptions()
@@ -397,6 +405,7 @@ namespace project_B.Views
                     break;
 
             }
+            Console.WriteLine("");
         }
     }
 }
