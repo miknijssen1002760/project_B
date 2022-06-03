@@ -69,6 +69,7 @@ namespace project_B.Views
             Console.WriteLine($"Naar wat wil je de naam veranderen van {planeT.Name}");
             string nameChange = Console.ReadLine();
             changePlaneNameToFile(chosen, nameChange);
+
         }
         public static void changePlaneLayout()
         {
