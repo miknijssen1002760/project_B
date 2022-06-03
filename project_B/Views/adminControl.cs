@@ -7,11 +7,6 @@ namespace project_B.Views
 {
     public class AdminControl
     {
-        public static string[][] strToLayout(string layoutStr)
-        {
-            string[][] StrSPlit = new string[3][];//Convert string to string[][]
-            return StrSPlit;
-        }
 
         #region ModPlanes
         public static int genIDPlanes()
@@ -32,9 +27,8 @@ namespace project_B.Views
             Console.WriteLine("Naam: ");
             string name = Console.ReadLine();
 
-            Console.WriteLine("\nLayout: (RowNumber + SeatLetter : vb. 1A 1B 1C 1D 2A 2B...)");
-            string layoutStr = Console.ReadLine();
-            string[][] layout = strToLayout(layoutStr);
+            Console.WriteLine("\nLayout A of B?: ");
+            string layout = Console.ReadLine();
 
             int ID = genIDPlanes();
             Console.WriteLine("\n" + $"ID assigned: {ID}");
@@ -69,13 +63,28 @@ namespace project_B.Views
             Console.WriteLine($"Naar wat wil je de naam veranderen van {planeT.Name}");
             string nameChange = Console.ReadLine();
             changePlaneNameToFile(chosen, nameChange);
-
         }
         public static void changePlaneLayout()
         {
-
+            planes planes = new planes();
+            listPlanes();
+            Console.WriteLine("Welk vliegtuigs layout wil je veranderen?");
+            int chosen = chooseOptionInt();
+            plane planeT = planes.getId(chosen);
+            Console.WriteLine($"Naar wat wil je de layout veranderen van {planeT.Name} (A of B)");
+            string layoutChange = Console.ReadLine();
+            changePlaneLayoutToFile(chosen, layoutChange);
         }
-        public static void addPlaneToFile(string name, int planeID, string[][] layout)
+
+        public static void changePlaneLayoutToFile(int planeID, string layout)
+        {
+            planes planes = new planes();
+            plane chPlane = planes.getId(planeID);
+            chPlane.Layout = layout;
+            chPlane.writeToFile();
+        }
+
+        public static void addPlaneToFile(string name, int planeID, string layout)
         {
             plane newPlane = new plane();
             newPlane.Name = name;
@@ -213,7 +222,7 @@ namespace project_B.Views
             int chosen = Int16.Parse(chosenStr);
             return chosen;
         }
-        
+
         public static void choosePlaneOption()
         {
             string[] PlaneOptions = { "Vliegtuig Toevoegen", "Vliegtuig Verwijderen", "Vliegtuig naam wijzigen", "Wijzig layout", "Vorig Menu", "exit" };
@@ -251,7 +260,7 @@ namespace project_B.Views
             Console.WriteLine("====GebruikerBeheer====");
             Console.WriteLine("\t1. Voeg gebruiker toe");
             Console.WriteLine("\t2. Verwijder gebruiker");
-            
+            Console.WriteLine("\t3. Wijzig gebruiker");
 
             string chosen = chooseOption();
 
@@ -263,7 +272,10 @@ namespace project_B.Views
             {
                 //tbm
             }
-
+            else if (chosen == "3")
+            {
+                //tbm
+            }
             else
             {
                 Console.WriteLine("Verkeerde Input");
