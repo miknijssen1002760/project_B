@@ -348,7 +348,6 @@ namespace project_B.Views
                     Environment.Exit(0);
                     break;
             }
-            Console.WriteLine("");
         }
 
         public static void chooseUserOption()
@@ -378,7 +377,6 @@ namespace project_B.Views
                     Environment.Exit(0);
                     break;
             }
-            Console.WriteLine("");
         }
       
         public static void chooseFlightOption()
@@ -412,7 +410,6 @@ namespace project_B.Views
                     Environment.Exit(0);
                     break;
             }
-            Console.WriteLine("");
         }
 
         public static void adminOptions()
@@ -443,7 +440,6 @@ namespace project_B.Views
                     break;
 
             }
-            Console.WriteLine("");
         }
     }
 }
