@@ -113,6 +113,63 @@ namespace project_B.Views
 
         }
         #endregion
+        #region ModUser
+
+        public static void listUsers()
+        {
+            Users users = new Users();
+            users.listAll();
+        }
+        public static void addUser()
+        {
+            Console.WriteLine("Voeg User toe aan Systeem:");
+            Console.WriteLine("Email: ");
+            string userName = Console.ReadLine();
+
+            Console.WriteLine("Wachtwoord: ");
+            string passWord = Console.ReadLine();
+
+            Console.WriteLine("Voornaam: ");
+            string fName = Console.ReadLine();
+
+            Console.WriteLine("Achternaam: ");
+            string lName = Console.ReadLine();
+
+            Console.WriteLine("Geboortedag: ");
+            string bDay = Console.ReadLine();
+
+            Console.WriteLine("Telefoonnummer: ");
+            string telNumber = Console.ReadLine();
+
+            Users users = new Users();
+
+            User user = users.Create(userName, passWord, fName, lName, bDay, telNumber);
+            if (user != null)
+            {
+                Console.WriteLine($"Succesfully created {user.UserName}");
+            }
+            else { Console.WriteLine("Wrong email"); }
+        }
+        public static void delUser()
+        {
+            Users users = new Users();
+            listUsers();
+            Console.WriteLine("Welke user wil je verwijderen?");
+            string chosen = Console.ReadLine();
+            User user = users.FindUser(chosen);
+            Console.WriteLine($"Weet je zeker dat je {user.UserName} wilt verwijderen?");
+            string ynOpt = Console.ReadLine().ToLower();
+            if (ynOpt == "y")
+            {
+                users.remove(user, users);
+            }
+            else
+            {
+                Console.WriteLine("Verkeerde Input");
+            }
+        }
+
+        #endregion
         #region ModFLights
 
         public static void listFlights()
@@ -256,32 +313,32 @@ namespace project_B.Views
                     break;
             }
         }
+
         public static void chooseUserOption()
         {
-            Console.WriteLine("====GebruikerBeheer====");
-            Console.WriteLine("\t1. Voeg gebruiker toe");
-            Console.WriteLine("\t2. Verwijder gebruiker");
-            Console.WriteLine("\t3. Wijzig gebruiker");
+            string[] UserOptions = { "Voeg gebruiker toe", "Verwijder Gebruiker", "Vorig Menu", "exit" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "===GebruikerBeheer===", UserOptions);
 
-            string chosen = chooseOption();
+            switch (CurrentSelection)
+            {
+                case 0:
+                    addUser();
+                    break;
 
-            if (chosen == "1")
-            {
-                //tbm
-            }
-            else if (chosen == "2")
-            {
-                //tbm
-            }
-            else if (chosen == "3")
-            {
-                //tbm
-            }
-            else
-            {
-                Console.WriteLine("Verkeerde Input");
+                case 1:
+                    delUser();
+                    break;
+
+                case 3:
+                    adminOptions();
+                    break;
+
+                case 4:
+                    Environment.Exit(0);
+                    break;
             }
         }
+      
         public static void chooseFlightOption()
         {
             string[] FlightOptions = { "Vlucht Toevoegen", "Vlucht Verwijderen", "Vlucht Bijwerken", "Vorig Menu", "exit" };

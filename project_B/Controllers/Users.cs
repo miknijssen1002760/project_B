@@ -184,5 +184,17 @@ namespace project_B.Controllers
 
         }
 
+        public void listAll()
+        {
+            Console.WriteLine("Email\tFirstName\tLastName\tBirthday\tPhoneNumber");
+            foreach (User user in users)
+
+            {
+                
+                Console.WriteLine($"{user.UserName}\t{user.FirstName}\t{user.LastName}\t{user.Birthday}\t{user.PhoneNumber}");
+            }
+            Console.WriteLine("");
+        }
+
     }
 }
