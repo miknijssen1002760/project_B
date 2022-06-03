@@ -42,6 +42,7 @@ namespace project_B.Controllers
                 newUser.LastName = lastname;
                 newUser.Birthday = birthday;
                 newUser.PhoneNumber = phonenumber;
+                newUser.IsAdmin = false;
                 users.Add(newUser);
                 Write();
                 return newUser;

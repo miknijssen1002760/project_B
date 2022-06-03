@@ -39,7 +39,7 @@ namespace project_B
         }
         public static void MainMenu()
         {
-            string[] MainMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten","Account Settings", "Admin Settings", "Exit" };
+            string[] MainMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten","Account Settings", "Exit", "Admin Settings" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Menu===", MainMenu);
 
             switch (CurrentSelection)
@@ -57,11 +57,11 @@ namespace project_B
                     break;
 
                 case 3:
-                    AccountSettings.Settings();
+                    AdminControl.adminOptions();
                     break;
 
                 case 4:
-                    AdminControl.adminOptions();
+                    AccountSettings.Settings();
                     break;
 
                 case 5:

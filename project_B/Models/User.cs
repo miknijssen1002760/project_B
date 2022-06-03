@@ -20,5 +20,7 @@ namespace project_B.Models
         public string Password { get; set; }
         [JsonPropertyName("phonenumber")]
         public string PhoneNumber { get; set; }
+        [JsonPropertyName("IsAdmin")]
+        public bool IsAdmin { get; set; }   
     }
 }
