@@ -90,6 +90,7 @@ namespace project_B.Views
             newPlane.Name = name;
             newPlane.PlaneID = planeID;
             newPlane.Layout = layout;
+            newPlane.Available = true;
             newPlane.writeToFile();
 
         }
