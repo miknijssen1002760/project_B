@@ -30,7 +30,7 @@ namespace project_B.Views
                     Console.SetCursorPosition(startX + (i % optionsPerLine) * spacingPerLine, startY + i / optionsPerLine);
 
                     if (i == currentSelection)
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
 
                     Console.Write(options[i]);
 
