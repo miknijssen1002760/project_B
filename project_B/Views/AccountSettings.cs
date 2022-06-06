@@ -10,6 +10,8 @@ namespace project_B.Views
 {
     internal class AccountSettings
     {
+        public static User currentUser = Login.ReturnUser();
+        public static Users accounts = new Users();
         public static void Settings()
         {
             string[] Settings = { "Delete Account", "Vorig Menu", "exit" };
@@ -33,14 +35,14 @@ namespace project_B.Views
 
         public static void DeleteAccount()
         {
-            Users accounts = new Users();
+            
             string[] options = { "Yes", "No" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to delete your account?", options);
 
             switch (CurrentSelection)
             {
                 case 0:
-                    accounts.remove(Login.currentUser, accounts);
+                    accounts.remove(currentUser, accounts);
                     project_B.HomeScreen();
                     break;
 
@@ -53,7 +55,23 @@ namespace project_B.Views
 
         public static void ChangeBirthday()
         {
+            string[] options = { "Yes", "No" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your birthdate?", options);
 
+            switch (CurrentSelection)
+            {
+                case 0:
+                    string Password = askPassword();
+                    string NewBirthdate = ToChange("Birthdate");
+
+                    accounts.birthChange(Password, NewBirthdate, currentUser);
+                    project_B.HomeScreen();
+                    break;
+
+                case 1:
+                    project_B.MainMenu();
+                    break;
+            }
         }
 
         public static void ChangeName()
@@ -74,6 +92,21 @@ namespace project_B.Views
         public static void ChangePassword()
         {
 
+        }
+
+        public static string askPassword()
+        {
+            Console.WriteLine("Voer uw wachtwoord in:");
+            string Password = Console.ReadLine();
+            return Password;
+
+        }
+
+        public static string ToChange(string ToChange)
+        {
+            Console.WriteLine($"Voer het nieuwe {ToChange} in: ");
+            string NewThing = Console.ReadLine();
+            return NewThing;
         }
     }
 }

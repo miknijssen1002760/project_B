@@ -101,6 +101,11 @@ namespace project_B.Views
             }
              
         }
+
+    public static User ReturnUser()
+        {
+            return currentUser;
+        }
         
     }
 }
