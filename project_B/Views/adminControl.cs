@@ -24,6 +24,8 @@ namespace project_B.Views
 
         public static void listAllPlanes()
         {
+            Console.Clear();
+
             listPlanes();
             Console.WriteLine("Druk ENTER om terug te gaan");
             Console.ReadLine();
@@ -32,6 +34,8 @@ namespace project_B.Views
 
         public static void addPlane()
         {
+            Console.Clear();
+
             Console.WriteLine("Voeg Vliegtuig toe aan Systeem:");
             Console.WriteLine("Naam: ");
             string name = Console.ReadLine();
@@ -48,6 +52,8 @@ namespace project_B.Views
         }
         public static void delPlane()
         {
+            Console.Clear();
+
             planes planes = new planes();
             listPlanes();
             Console.WriteLine("Welk vliegtuig wil je verwijderen?");
@@ -64,6 +70,8 @@ namespace project_B.Views
         }
         public static void changePlaneName()
         {
+            Console.Clear();
+
             planes planes = new planes();
             listPlanes();
             Console.WriteLine("Welk vliegtuigs naam wil je veranderen?");
@@ -77,6 +85,8 @@ namespace project_B.Views
         }
         public static void changePlaneLayout()
         {
+            Console.Clear();
+
             planes planes = new planes();
             listPlanes();
             Console.WriteLine("Welk vliegtuigs layout wil je veranderen?");
@@ -121,10 +131,7 @@ namespace project_B.Views
             chPlane.Name = name;
             chPlane.writeToFile();
         }
-        public static void changePlaneLayoutToFile(int planeID, string[][] layout)
-        {
 
-        }
         #endregion
         #region ModUser
 
@@ -136,6 +143,8 @@ namespace project_B.Views
 
         public static void listAllUsers()
         {
+            Console.Clear();
+
             listUsers();
             Console.WriteLine("Druk ENTER om terug te gaan");
             Console.ReadLine();
@@ -144,6 +153,8 @@ namespace project_B.Views
 
         public static void addUser()
         {
+            Console.Clear();
+
             Console.WriteLine("Voeg User toe aan Systeem:");
             Console.WriteLine("Email: ");
             string userName = Console.ReadLine();
@@ -170,15 +181,21 @@ namespace project_B.Views
             {
                 Console.WriteLine($"Succesvol {user.UserName} aangemaakt");
             }
-            else { Console.WriteLine("Wrong email"); }
+            else 
+            { 
+                Console.WriteLine("\nVekeerde email");
+                Console.WriteLine("Druk ENTER om terug te gaan"); Console.ReadLine(); 
+            }
 
             chooseUserOption();
         }
         public static void delUser()
         {
+            Console.Clear();
+
             Users users = new Users();
             listUsers();
-            Console.WriteLine("Welke user wil je verwijderen?");
+            Console.WriteLine("Welke user wil je verwijderen?(Vul in Email)");
             string chosen = Console.ReadLine();
             User user = users.FindUser(chosen);
             Console.WriteLine($"Weet je zeker dat je {user.UserName} wilt verwijderen?(j/n)");
@@ -202,6 +219,8 @@ namespace project_B.Views
 
         public static void listAllFlights()
         {
+            Console.Clear();
+
             listFlights();
             Console.WriteLine("Druk ENTER om terug te gaan");
             Console.ReadLine();
@@ -216,6 +235,8 @@ namespace project_B.Views
         }
         public static void addFlight()
         {
+            Console.Clear();
+
             Console.WriteLine("Voeg Vlucht toe aan Systeem:");
             Console.WriteLine("Welk vliegtuig is gekoppeld aan de vlucht?");
             listPlanes();
@@ -256,6 +277,8 @@ namespace project_B.Views
 
         public static void deleteFlight()
         {
+            Console.Clear();
+
             Flights flights = new Flights();
             listFlights();
             Console.WriteLine("Welke vlucht wil je verwijderen?");
@@ -281,6 +304,8 @@ namespace project_B.Views
 
         public static void editFlight()
         {
+            Console.Clear();
+
             //what flight do you want to change
             //display all flights
             //display selected flight
