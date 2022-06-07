@@ -11,46 +11,62 @@ namespace project_B.Controllers.Tests
     [TestClass()]
     public class UsersTests
     {
+        Users users = new Users();
         [TestMethod()]
         public void FindUserTest()
         {
-            Assert.Fail();
+            Assert.IsNotNull(users.FindUser("test@test.nl"));
+            Assert.IsNull(users.FindUser("test12@test.nl"));
         }
 
         [TestMethod()]
         public void CreateTest()
         {
-            Assert.Fail();
+            users.Create("test123@test.nl", "test123", "test123", "persoon", "00/00/0000", "0000000000");
+            Assert.IsNotNull(users.FindUser("test123@test.nl"));
         }
 
         [TestMethod()]
         public void PassCheckTest()
         {
-            Assert.Fail();
+            Assert.IsTrue(users.PassCheck("test", "test"));
+            Assert.IsFalse(users.PassCheck("test", "test123"));
         }
 
         [TestMethod()]
         public void LoginTest()
         {
-            Assert.Fail();
+            Assert.IsNotNull(users.Login(users, "test@test.nl", "test123"));
+            Assert.IsNull(users.Login(users, "test@test.com", "test123"));
         }
 
         [TestMethod()]
         public void emailCheckTest()
         {
-            Assert.Fail();
+            Assert.IsTrue(users.emailCheck("test1@test.nl"));
+            Assert.IsFalse(users.emailCheck("testtest.nl"));
+            Assert.IsFalse(users.emailCheck("test@test.nl"));
         }
 
         [TestMethod()]
         public void removeTest()
         {
-            Assert.Fail();
+            users.remove(users.FindUser("test123@test.nl"));
+            Assert.IsNull(users.FindUser("test123@test.nl"));
+        }
+
+        [TestMethod()]
+        public void removeTest1()
+        {
+            users.Create("test123@test.nl", "test123", "test123", "persoon", "00/00/0000", "0000000000");
+            users.remove(users.FindUser("test123@test.nl"), users);
+            Assert.IsNull(users.FindUser("test123@test.nl"));
         }
 
         [TestMethod()]
         public void logoutTest()
         {
-            Assert.Fail();
+            Assert.IsNull(users.logout());
         }
     }
 }
