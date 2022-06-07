@@ -102,10 +102,10 @@ namespace project_B.Views
              
         }
 
-    public static User ReturnUser()
+    public static string ReturnUser()
         {
-            return currentUser;
-        }
+            return currentUser.UserName;
+    }
         
     }
 }

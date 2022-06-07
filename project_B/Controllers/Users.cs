@@ -113,7 +113,7 @@ namespace project_B.Controllers
             {
                 if (emailCheck(newEmail))
                 {
-                    x.UserName = newEmail;
+                    x.UserName = newEmail.ToLower();
                     Write();
                     return true;
                 }

@@ -10,24 +10,47 @@ namespace project_B.Views
 {
     internal class AccountSettings
     {
-        public static User currentUser = Login.ReturnUser();
         public static Users accounts = new Users();
+        public static string currentMail = Login.ReturnUser();
+        public static User currentUser = accounts.FindUser(currentMail);
+        
+
         public static void Settings()
         {
-            string[] Settings = { "Delete Account", "Vorig Menu", "exit" };
+            string[] Settings = {"Change Name", "Change Email", "Change phonenumber", "Change Birthdate", "Change Password", "Delete Account", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Account Settings===", Settings);
 
             switch (CurrentSelection)
             {
                 case 0:
-                    DeleteAccount();
+                    ChangeName();
                     break;
 
                 case 1:
-                    project_B.MainMenu();
+                    ChangeEmail();
                     break;
 
                 case 2:
+                    ChangeNumber();
+                    break;
+
+                case 3:
+                    ChangeBirthday();
+                    break;
+
+                case 4:
+                    DeleteAccount();
+                    break;
+
+                case 5:
+                    DeleteAccount();
+                    break;
+
+                case 6:
+                    project_B.MainMenu();
+                    break;
+
+                case 7:
                     Environment.Exit(0);
                     break;
             }
@@ -42,6 +65,7 @@ namespace project_B.Views
             switch (CurrentSelection)
             {
                 case 0:
+                    Console.Clear();
                     accounts.remove(currentUser, accounts);
                     project_B.HomeScreen();
                     break;
@@ -62,9 +86,9 @@ namespace project_B.Views
             {
                 case 0:
                     string Password = askPassword();
-                    string NewBirthdate = ToChange("Birthdate");
+                    string newBirthdate = ToChange("birthdate");
 
-                    accounts.birthChange(Password, NewBirthdate, currentUser);
+                    accounts.birthChange(Password, newBirthdate, currentUser);
                     project_B.HomeScreen();
                     break;
 
@@ -76,26 +100,91 @@ namespace project_B.Views
 
         public static void ChangeName()
         {
+            string[] options = { "Yes", "No" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your name?", options);
 
+            switch (CurrentSelection)
+            {
+                case 0:
+                    string Password = askPassword();
+                    string newFirstname = ToChange("first name");
+                    string newLastname = ToChange("last name");
+                    accounts.nameChange(Password, newFirstname, newLastname, currentUser);
+                    project_B.HomeScreen();
+                    break;
+
+                case 1:
+                    project_B.MainMenu();
+                    break;
+            }
         }
 
         public static void ChangeNumber()
         {
+            string[] options = { "Yes", "No" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your phonenumber?", options);
 
+            switch (CurrentSelection)
+            {
+                case 0:
+                    string Password = askPassword();
+                    string newNumber = ToChange("phonenumber");
+
+                    accounts.numberChange(Password, newNumber, currentUser);
+                    project_B.HomeScreen();
+                    break;
+
+                case 1:
+                    project_B.MainMenu();
+                    break;
+            }
         }
 
         public static void ChangeEmail()
         {
+            string[] options = { "Yes", "No" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your Email?", options);
 
+            switch (CurrentSelection)
+            {
+                case 0:
+                    string Password = askPassword();
+                    string newEmail = ToChange("Email");
+
+                    accounts.emailChange(Password, newEmail, currentUser);
+                    project_B.HomeScreen();
+                    break;
+
+                case 1:
+                    project_B.MainMenu();
+                    break;
+            }
         }
 
         public static void ChangePassword()
         {
+            string[] options = { "Yes", "No" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your password?", options);
 
+            switch (CurrentSelection)
+            {
+                case 0:
+                    string Password = askPassword();
+                    string newPassword = ToChange("password");
+
+                    accounts.passChange(Password, newPassword, currentUser);
+                    project_B.HomeScreen();
+                    break;
+
+                case 1:
+                    project_B.MainMenu();
+                    break;
+            }
         }
 
         public static string askPassword()
         {
+            Console.Clear();
             Console.WriteLine("Voer uw wachtwoord in:");
             string Password = Console.ReadLine();
             return Password;
@@ -104,6 +193,7 @@ namespace project_B.Views
 
         public static string ToChange(string ToChange)
         {
+            Console.Clear();
             Console.WriteLine($"Voer het nieuwe {ToChange} in: ");
             string NewThing = Console.ReadLine();
             return NewThing;
