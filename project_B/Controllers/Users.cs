@@ -31,14 +31,18 @@ namespace project_B.Controllers
             return users.Find(i => i.UserName == name);
         }
 
-        public User Create(string name, string pass, Users x)
+        public User Create(string mail, string pass, string firstname, string lastname, string birthday, string phonenumber)
         {
             User newUser = new User();
-            newUser.Id = 3;
-            if (emailCheck(name, x))
+            if (emailCheck(mail))
             {
-                newUser.UserName = name;
+                newUser.UserName = mail.ToLower();
                 newUser.Password = pass;
+                newUser.FirstName = firstname;
+                newUser.LastName = lastname;
+                newUser.Birthday = birthday;
+                newUser.PhoneNumber = phonenumber;
+                newUser.IsAdmin = false;
                 users.Add(newUser);
                 Write();
                 return newUser;
@@ -87,9 +91,9 @@ namespace project_B.Controllers
 
         }
 
-        public bool emailCheck(string email, Users x)
+        public bool emailCheck(string email)
         {
-            return (email.Contains("@") && x.FindUser(email) == null);
+            return (email.Contains("@") && FindUser(email) == null);
         }
 
         public void remove(User user, Users x)
@@ -103,6 +107,94 @@ namespace project_B.Controllers
             return null;
         }
 
+        public bool emailChange(string Password, string newEmail, User x)
+        {
+            if (Password == x.Password)
+            {
+                if (emailCheck(newEmail))
+                {
+                    x.UserName = newEmail;
+                    Write();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool nameChange(string Password, string newFirstname, string newLastname, User x)
+        {
+            if (Password == x.Password)
+            {
+                x.FirstName = newFirstname;
+                x.LastName = newLastname;
+                Write();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool birthChange(string Password, string newBirth, User x)
+        {
+            if (Password == x.Password)
+            {
+                x.Birthday = newBirth;
+                Write();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool numberChange(string Password, string newNum, User x)
+        {
+            if (Password == x.Password)
+            {
+                x.PhoneNumber = newNum;
+                Write();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool passChange(string Password, string newPass, User x)
+        {
+            if (Password == x.Password)
+            {
+                x.Password = newPass;
+                Write();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public void listAll()
+        {
+            Console.WriteLine("Email\tFirstName\tLastName\tBirthday\tPhoneNumber");
+            foreach (User user in users)
+
+            {
+                
+                Console.WriteLine($"{user.UserName}\t{user.FirstName}\t{user.LastName}\t{user.Birthday}\t{user.PhoneNumber}");
+            }
+            Console.WriteLine("");
+        }
 
     }
 }

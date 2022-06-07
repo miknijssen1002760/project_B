@@ -28,7 +28,7 @@ namespace project_B
                     Login.LoginFun();
                     break;
                 case 1:
-                    Registreren.Register();
+                    Login.Register();
                     break;
                 case 2:
                     Environment.Exit(0);
@@ -39,7 +39,8 @@ namespace project_B
         }
         public static void MainMenu()
         {
-            string[] MainMenu = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten","Account Settings", "Admin Settings", "Exit" };
+            
+            string[] MainMenu = Login.IsAdmin();
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Menu===", MainMenu);
 
             switch (CurrentSelection)
@@ -61,12 +62,15 @@ namespace project_B
                     break;
 
                 case 4:
-                    AdminControl.adminOptions();
+                    Environment.Exit(0);
                     break;
 
                 case 5:
-                    Environment.Exit(0);
+                    AdminControl.adminOptions();
                     break;
+
+                
+
             }
         }
     }

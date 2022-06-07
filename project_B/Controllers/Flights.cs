@@ -79,7 +79,7 @@ namespace project_B.Controllers
             {
                 if (flight.Active == true)
                 {
-                    Console.WriteLine($"{flight.PlaneID}\t{flight.Date}\t{flight.Destination}\t\t{flight.DeparturePlace}\t{flight.Duration}");
+                    Console.WriteLine($"{flight.Id}\t{flight.Date}\t{flight.Destination}\t\t{flight.DeparturePlace}\t{flight.Duration}");
                 }
             }
             Console.WriteLine("");

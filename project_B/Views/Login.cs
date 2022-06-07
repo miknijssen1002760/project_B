@@ -16,7 +16,7 @@ namespace project_B.Views
             Users accounts = new Users();
 
             Console.WriteLine("Enter email: ");
-            string mail = Console.ReadLine();
+            string mail = Console.ReadLine().ToLower();
             if (accounts.FindUser(mail) == null)
             {
                 string[] RegisterAnswer = { "Yes", "No", "Exit" };
@@ -25,7 +25,7 @@ namespace project_B.Views
                 switch (CurrentSelection)
                 {
                     case 0:
-                        Registreren.Register();
+                        Register();
                         break;
 
                     case 1:
@@ -52,5 +52,60 @@ namespace project_B.Views
                 }
             }
         }
+        public static void Register()
+        {
+            Console.Clear();
+            Users accounts = new Users();
+            
+
+            Console.WriteLine("Enter email: ");
+            string mail = Console.ReadLine();
+
+            Console.WriteLine("What is your first name: ");
+            string firstname = Console.ReadLine();
+
+            Console.WriteLine("What is your last name: ");
+            string lastname = Console.ReadLine();
+
+            Console.WriteLine("What is your birthday DD/MM/YYYY: ");
+            string birthday = Console.ReadLine();
+
+            Console.WriteLine("What is your phone number: ");
+            string phonenumber = Console.ReadLine();
+
+            Console.WriteLine("Enter password: ");
+            string pass = Console.ReadLine();
+
+
+            currentUser = accounts.Create(mail, pass, firstname, lastname, birthday, phonenumber);
+            if (currentUser == null)
+            {
+                Console.WriteLine("Invalid email or email is already in use");
+                Thread.Sleep(1500);
+                Register();
+            }
+        }
+    
+    public static string[] IsAdmin()
+        {
+            
+            if (currentUser.IsAdmin == true)
+            {
+                string[] Options = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten", "Account Settings", "Exit", "Admin Settings" };
+                return Options;
+            }
+            else
+            {
+                string[] Options = { "Beschikbare vluchten", "Vlucht Boeken", "Geboekte Vluchten", "Account Settings", "Exit"};
+                return Options;
+            }
+             
+        }
+
+    public static User ReturnUser()
+        {
+            return currentUser;
+        }
+        
     }
 }

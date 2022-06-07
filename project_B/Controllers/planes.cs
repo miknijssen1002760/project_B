@@ -55,13 +55,13 @@ namespace project_B.Models
 
         public void listAll()
         {
-            Console.WriteLine("ID\tName");
+            Console.WriteLine("ID\tName\tLayout");
             foreach (plane plane in _planes)
 
             {
                 if (plane.Available == true)
                 {
-                    Console.WriteLine($"{plane.PlaneID}\t{plane.Name}");
+                    Console.WriteLine($"{plane.PlaneID}\t{plane.Name}\t{plane.Layout}");
                 }
             }
             Console.WriteLine("");
