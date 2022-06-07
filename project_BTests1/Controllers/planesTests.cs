@@ -11,28 +11,18 @@ namespace project_B.Controllers.Tests
     [TestClass()]
     public class planesTests
     {
+        planes planes = new planes();
         [TestMethod()]
         public void getLastIDTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void listAllTest()
-        {
-            Assert.Fail();
+            Assert.AreEqual(planes.getLastID(),2);
         }
 
         [TestMethod()]
         public void getIdTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void UpdateListTest()
-        {
-            Assert.Fail();
+            Assert.IsNotNull(planes.getId(2));
+            Assert.IsNull(planes.getId(3));
         }
     }
 }
