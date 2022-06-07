@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_B.Models.Tests
+namespace project_B.Controllers.Tests
 {
     [TestClass()]
     public class planesTests
