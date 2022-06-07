@@ -102,6 +102,12 @@ namespace project_B.Controllers
             Write();
         }
 
+        public void remove(User user)
+        {
+            users.Remove(user);
+            Write();
+        }
+
         public User logout()
         {
             return null;

@@ -1,38 +1,28 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using project_B.Models;
+using project_B.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_B.Models.Tests
+namespace project_B.Controllers.Tests
 {
     [TestClass()]
     public class planesTests
     {
+        planes planes = new planes();
         [TestMethod()]
         public void getLastIDTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void listAllTest()
-        {
-            Assert.Fail();
+            Assert.AreEqual(planes.getLastID(),2);
         }
 
         [TestMethod()]
         public void getIdTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void UpdateListTest()
-        {
-            Assert.Fail();
+            Assert.IsNotNull(planes.getId(2));
+            Assert.IsNull(planes.getId(3));
         }
     }
 }
