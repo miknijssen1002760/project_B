@@ -302,23 +302,6 @@ namespace project_B.Views
             delFlight.writeToFile();
         }
 
-        public static void editFlight()
-        {
-            Console.Clear();
-
-            //what flight do you want to change
-            //display all flights
-            //display selected flight
-            //what do you want to change?
-            //gotofunction
-
-            chooseFlightOption();
-        }
-
-        public static void editFlightToFile()
-        {
-
-        }
         #endregion
 
 
@@ -406,7 +389,7 @@ namespace project_B.Views
       
         public static void chooseFlightOption()
         {
-            string[] FlightOptions = { "Toon vluchten", "Vlucht Toevoegen", "Vlucht Verwijderen", "Vlucht Bijwerken", "Vorig Menu", "exit" };
+            string[] FlightOptions = { "Toon vluchten", "Vlucht Toevoegen", "Vlucht Verwijderen", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Flight Options===", FlightOptions);
 
             switch (CurrentSelection)
@@ -424,14 +407,10 @@ namespace project_B.Views
                     break;
 
                 case 3:
-                    editFlight();
-                    break;
-
-                case 4:
                     adminOptions();
                     break;
 
-                case 5:
+                case 4:
                     Environment.Exit(0);
                     break;
             }

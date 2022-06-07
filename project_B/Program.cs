@@ -19,8 +19,15 @@ namespace project_B
 
         public static void HomeScreen()
         {
+            string header = "\n\n\n" + @"
+   ___       __  __             __             ___   _     ___            
+  / _ \___  / /_/ /____ _______/ /__ ___ _    / _ | (_)___/ (_)__  ___ ___
+ / , _/ _ \/ __/ __/ -_) __/ _  / _ `/  ' \  / __ |/ / __/ / / _ \/ -_|_-<
+/_/|_|\___/\__/\__/\__/_/  \_,_/\_,_/_/_/_/ /_/ |_/_/_/ /_/_/_//_/\__/___/
+                                                                          
+";
             string[] LoginMenu = { "Login", "Register", "Exit" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "===Account===", LoginMenu);
+            int CurrentSelection = MenuCreator.MultipleChoice(true, header, LoginMenu);
 
             switch (CurrentSelection)
             {
