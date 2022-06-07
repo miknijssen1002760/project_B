@@ -1,11 +1,12 @@
-﻿using System;
+﻿using project_B.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
 namespace project_B.Models
 {
-    internal class planes
+    public class planes
     {
         private List<plane> _planes;
         string path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"Data/plane.json"));

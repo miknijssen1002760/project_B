@@ -2,7 +2,7 @@
 
 namespace project_B.Models
 {
-    internal class plane
+    public class plane
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }
