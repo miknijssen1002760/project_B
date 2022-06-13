@@ -13,7 +13,7 @@ namespace project_B
         public static void Main(string[] args)
         {
             HomeScreen();
-            MainMenu();
+            
 
         }
 

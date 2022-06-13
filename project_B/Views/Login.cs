@@ -50,6 +50,7 @@ namespace project_B.Views
                     Thread.Sleep(1500);
                     Login.LoginFun();
                 }
+                project_B.MainMenu();
             }
         }
         public static void Register()
@@ -78,6 +79,7 @@ namespace project_B.Views
 
 
             currentUser = accounts.Create(mail, pass, firstname, lastname, birthday, phonenumber);
+            project_B.MainMenu();
             if (currentUser == null)
             {
                 Console.WriteLine("Onvalide email of email is al in gebruik");
