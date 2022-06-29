@@ -151,7 +151,7 @@ namespace project_B.Views
                     string Password = askPassword();
                     string newEmail = ToChange("Email");
 
-                    accounts.emailChange(Password, newEmail, currentUser);
+                    accounts.emailChange(Password, newEmail, currentUser);//er gebeurt niets als het wachtwoord fout is.
                     project_B.HomeScreen();
                     break;
 
