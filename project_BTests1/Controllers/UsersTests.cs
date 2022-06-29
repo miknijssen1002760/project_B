@@ -19,11 +19,26 @@ namespace project_B.Controllers.Tests
             Assert.IsNull(users.FindUser("test12@test.nl"));
         }
 
-        [TestMethod()]
+        [TestMethod()] // Jesse
         public void CreateTest()
         {
             users.Create("test123@test.nl", "test123", "test123", "persoon", "00/00/0000", "0000000000");
             Assert.IsNotNull(users.FindUser("test123@test.nl"));
+        }
+
+        [TestMethod()] // Jesse
+        public void removeTest()
+        {
+            users.remove(users.FindUser("test123@test.nl"));
+            Assert.IsNull(users.FindUser("test123@test.nl"));
+        }
+
+        [TestMethod()] // Jesse
+        public void removeTest1()
+        {
+            users.Create("test123@test.nl", "test123", "test123", "persoon", "00/00/0000", "0000000000");
+            users.remove(users.FindUser("test123@test.nl"), users);
+            Assert.IsNull(users.FindUser("test123@test.nl"));
         }
 
         [TestMethod()]
@@ -48,20 +63,7 @@ namespace project_B.Controllers.Tests
             Assert.IsFalse(users.emailCheck("test@test.nl"));
         }
 
-        [TestMethod()]
-        public void removeTest()
-        {
-            users.remove(users.FindUser("test123@test.nl"));
-            Assert.IsNull(users.FindUser("test123@test.nl"));
-        }
-
-        [TestMethod()]
-        public void removeTest1()
-        {
-            users.Create("test123@test.nl", "test123", "test123", "persoon", "00/00/0000", "0000000000");
-            users.remove(users.FindUser("test123@test.nl"), users);
-            Assert.IsNull(users.FindUser("test123@test.nl"));
-        }
+        
 
         [TestMethod()]
         public void logoutTest()

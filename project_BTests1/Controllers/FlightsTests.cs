@@ -12,11 +12,19 @@ namespace project_B.Controllers.Tests
     public class FlightsTests
     {
         Flights flights = new Flights();
-        [TestMethod()]
+
+        [TestMethod()] // Jesse
         public void getLastIDTest()
         {
             Assert.AreEqual(flights.getLastID(), 4);
         }
-        
+
+        [TestMethod()] // Jesse
+        public void getIdTest()
+        {
+            Assert.IsNotNull(flights.getId(3));
+            Assert.IsNull(flights.getId(6));
+        }
+
     }
 }
