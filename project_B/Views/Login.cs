@@ -15,12 +15,12 @@ namespace project_B.Views
             Console.Clear();
             Users accounts = new Users();
 
-            Console.WriteLine("Enter email: ");
+            Console.WriteLine("Voer in email: ");
             string mail = Console.ReadLine().ToLower();
             if (accounts.FindUser(mail) == null)
             {
-                string[] RegisterAnswer = { "Yes", "No", "Exit" };
-                int CurrentSelection = MenuCreator.MultipleChoice(true, "No account found, would you like to make one?", RegisterAnswer);
+                string[] RegisterAnswer = { "Ja", "Nee", "Exit" };
+                int CurrentSelection = MenuCreator.MultipleChoice(true, "Geen account gevonden, wil je er één aanmaken?", RegisterAnswer);
 
                 switch (CurrentSelection)
                 {
@@ -41,15 +41,16 @@ namespace project_B.Views
 
             else
             {
-                Console.WriteLine("Enter password: ");
+                Console.WriteLine("Voer in wachtwoord: ");
                 string pass = Console.ReadLine();
                 currentUser = accounts.Login(accounts, mail, pass);
                 if (currentUser == null)
                 {
-                    Console.WriteLine("Password Incorrect please try again");
+                    Console.WriteLine("Verkeerd wactwoord, probeer opnieuw");
                     Thread.Sleep(1500);
                     Login.LoginFun();
                 }
+                project_B.MainMenu();
             }
         }
         public static void Register()
@@ -58,29 +59,30 @@ namespace project_B.Views
             Users accounts = new Users();
             
 
-            Console.WriteLine("Enter email: ");
+            Console.WriteLine("Voer in email: ");
             string mail = Console.ReadLine();
 
-            Console.WriteLine("What is your first name: ");
+            Console.WriteLine("Wat is je voornaam: ");
             string firstname = Console.ReadLine();
 
-            Console.WriteLine("What is your last name: ");
+            Console.WriteLine("Wat is je achternaam: ");
             string lastname = Console.ReadLine();
 
-            Console.WriteLine("What is your birthday DD/MM/YYYY: ");
+            Console.WriteLine("Wat is je verjaardag DD/MM/YYYY: ");
             string birthday = Console.ReadLine();
 
-            Console.WriteLine("What is your phone number: ");
+            Console.WriteLine("Wat is je telefoonnummer: ");
             string phonenumber = Console.ReadLine();
 
-            Console.WriteLine("Enter password: ");
+            Console.WriteLine("Voer in wachtwoord: ");
             string pass = Console.ReadLine();
 
 
             currentUser = accounts.Create(mail, pass, firstname, lastname, birthday, phonenumber);
+            project_B.MainMenu();
             if (currentUser == null)
             {
-                Console.WriteLine("Invalid email or email is already in use");
+                Console.WriteLine("Onvalide email of email is al in gebruik");
                 Thread.Sleep(1500);
                 Register();
             }

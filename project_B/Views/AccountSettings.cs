@@ -17,7 +17,7 @@ namespace project_B.Views
 
         public static void Settings()
         {
-            string[] Settings = {"Change Name", "Change Email", "Change phonenumber", "Change Birthdate", "Change Password", "Delete Account", "Vorig Menu", "exit" };
+            string[] Settings = {"Wijzig Naam", "Wijzig Email", "Wijzig telefoonnummer", "Wijzig geboortedag", "Wijzig wachtwoord", "Verwijder Account", "Vorig Menu", "exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, "===Account Settings===", Settings);
 
             switch (CurrentSelection)
@@ -59,8 +59,8 @@ namespace project_B.Views
         public static void DeleteAccount()
         {
             
-            string[] options = { "Yes", "No" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to delete your account?", options);
+            string[] options = { "Ja", "Nee" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Wil je je account verwijderen?", options);
 
             switch (CurrentSelection)
             {
@@ -79,14 +79,14 @@ namespace project_B.Views
 
         public static void ChangeBirthday()
         {
-            string[] options = { "Yes", "No" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your birthdate?", options);
+            string[] options = { "Ja", "Nee" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Wil je je geboortedag wijzigen?", options);
 
             switch (CurrentSelection)
             {
                 case 0:
                     string Password = askPassword();
-                    string newBirthdate = ToChange("birthdate");
+                    string newBirthdate = ToChange("geboortedag");
 
                     accounts.birthChange(Password, newBirthdate, currentUser);
                     project_B.HomeScreen();
@@ -100,15 +100,15 @@ namespace project_B.Views
 
         public static void ChangeName()
         {
-            string[] options = { "Yes", "No" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your name?", options);
+            string[] options = { "Ja", "Nee" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Wil je je naam wijzigen?", options);
 
             switch (CurrentSelection)
             {
                 case 0:
                     string Password = askPassword();
-                    string newFirstname = ToChange("first name");
-                    string newLastname = ToChange("last name");
+                    string newFirstname = ToChange("voornaam");
+                    string newLastname = ToChange("achternaam");
                     accounts.nameChange(Password, newFirstname, newLastname, currentUser);
                     project_B.HomeScreen();
                     break;
@@ -121,14 +121,14 @@ namespace project_B.Views
 
         public static void ChangeNumber()
         {
-            string[] options = { "Yes", "No" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your phonenumber?", options);
+            string[] options = { "Ja", "Nee" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Wil je je telefoonnummer wijzigen?", options);
 
             switch (CurrentSelection)
             {
                 case 0:
                     string Password = askPassword();
-                    string newNumber = ToChange("phonenumber");
+                    string newNumber = ToChange("telefoonnummer");
 
                     accounts.numberChange(Password, newNumber, currentUser);
                     project_B.HomeScreen();
@@ -142,8 +142,8 @@ namespace project_B.Views
 
         public static void ChangeEmail()
         {
-            string[] options = { "Yes", "No" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your Email?", options);
+            string[] options = { "Ja", "Nee" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Wil je je email wijzigen?", options);
 
             switch (CurrentSelection)
             {
@@ -163,14 +163,14 @@ namespace project_B.Views
 
         public static void ChangePassword()
         {
-            string[] options = { "Yes", "No" };
-            int CurrentSelection = MenuCreator.MultipleChoice(true, "Do you want to change your password?", options);
+            string[] options = { "Ja", "Nee" };
+            int CurrentSelection = MenuCreator.MultipleChoice(true, "Wil je je wachtwoord wijzigen?", options);
 
             switch (CurrentSelection)
             {
                 case 0:
                     string Password = askPassword();
-                    string newPassword = ToChange("password");
+                    string newPassword = ToChange("Wachtwoord: ");
 
                     accounts.passChange(Password, newPassword, currentUser);
                     project_B.HomeScreen();

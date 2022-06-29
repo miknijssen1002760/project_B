@@ -13,7 +13,7 @@ namespace project_B
         public static void Main(string[] args)
         {
             HomeScreen();
-            MainMenu();
+            
 
         }
 
@@ -26,7 +26,7 @@ namespace project_B
 /_/|_|\___/\__/\__/\__/_/  \_,_/\_,_/_/_/_/ /_/ |_/_/_/ /_/_/_//_/\__/___/
                                                                           
 ";
-            string[] LoginMenu = { "Login", "Register", "Exit" };
+            string[] LoginMenu = { "Login", "Aanmelden", "Exit" };
             int CurrentSelection = MenuCreator.MultipleChoice(true, header, LoginMenu);
 
             switch (CurrentSelection)

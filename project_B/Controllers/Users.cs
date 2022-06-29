@@ -192,7 +192,7 @@ namespace project_B.Controllers
 
         public void listAll()
         {
-            Console.WriteLine("Email\tFirstName\tLastName\tBirthday\tPhoneNumber");
+            Console.WriteLine("Email\tVoornaam\tAchternaam\tGeboortedag\tTelefoonnummer");
             foreach (User user in users)
 
             {
