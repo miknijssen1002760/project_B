@@ -11,7 +11,7 @@ namespace project_B.Controllers.Tests
 {
     //Sem Hirschbein
     [TestClass()]
-    public class UsersTests
+    public class UsersTests2
     {
         Users user = new Users();
         [TestMethod()]
