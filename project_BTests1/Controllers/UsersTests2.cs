@@ -27,8 +27,21 @@ namespace project_B.Controllers.Tests
             User currentUser = user.FindUser("testing@create.com");
             user.emailChange("test1", "TesTed@Create.com", currentUser);
             Assert.IsNotNull(user.FindUser("tested@create.com"));
+            user.emailChange("test1", "testing@create.com", currentUser);
+        }
+       
+        [TestMethod()]
+        public void NameChangeTest()
+        {
+            User currentUser = user.FindUser("testing@create.com");
+            user.nameChange("test1", "changeTest", "testedChange", currentUser);
+            Assert.IsTrue(currentUser.FirstName == "changeTest" && currentUser.LastName == "testedChange");
+            user.nameChange("test1", "test", "creation", currentUser);
+
+
         }
 
-
     }
+
 }
+

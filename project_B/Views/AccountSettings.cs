@@ -39,7 +39,7 @@ namespace project_B.Views
                     break;
 
                 case 4:
-                    DeleteAccount();
+                    ChangePassword();
                     break;
 
                 case 5:
