@@ -12,13 +12,13 @@ namespace project_B.Controllers.Tests
     public class planesTests
     {
         planes planes = new planes();
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void getLastIDTest()
         {
             Assert.AreEqual(planes.getLastID(),2);
         }
 
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void getIdTest()
         {
             Assert.IsNotNull(planes.getId(2));

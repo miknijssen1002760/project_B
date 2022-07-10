@@ -12,7 +12,7 @@ namespace project_B.Controllers.Tests
     public class UsersTests
     {
         Users users = new Users();
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void FindUserTest()
         {
             Assert.IsNotNull(users.FindUser("test@test.nl"));
@@ -65,13 +65,13 @@ namespace project_B.Controllers.Tests
 
         
 
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void logoutTest()
         {
             Assert.IsNull(users.logout());
         }
 
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void nameChangeTest()
         {
             User user = users.FindUser("test@test.nl");
@@ -87,7 +87,7 @@ namespace project_B.Controllers.Tests
             users.nameChange("test123", "test", "persoon", user);
         }
 
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void numberChangeTest()
         {
             User user = users.FindUser("test@test.nl");
@@ -99,7 +99,7 @@ namespace project_B.Controllers.Tests
             users.numberChange("test123", "0000000000", user);
         }
 
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void birthChangeTest()
         {
             User user = users.FindUser("test@test.nl");
@@ -110,7 +110,7 @@ namespace project_B.Controllers.Tests
             }
             users.birthChange("test123", "00/00/0000", user);
         }
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void emailChangeTest()
         {
             User user = users.FindUser("test@test.nl");
@@ -123,7 +123,7 @@ namespace project_B.Controllers.Tests
             users.emailChange("test123", "test@test.nl", user);
         }
 
-        [TestMethod()]
+        [TestMethod()] // Mik
         public void passChangeTest()
         {
             User user = users.FindUser("test@test.nl");
