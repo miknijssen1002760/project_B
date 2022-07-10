@@ -41,21 +41,21 @@ namespace project_B.Controllers.Tests
             Assert.IsNull(users.FindUser("test123@test.nl"));
         }
 
-        [TestMethod()]
+        [TestMethod()] // Jay
         public void PassCheckTest()
         {
             Assert.IsTrue(users.PassCheck("test", "test"));
             Assert.IsFalse(users.PassCheck("test", "test123"));
         }
 
-        [TestMethod()]
+        [TestMethod()] // Jay
         public void LoginTest()
         {
             Assert.IsNotNull(users.Login(users, "test@test.nl", "test123"));
             Assert.IsNull(users.Login(users, "test@test.com", "test123"));
         }
 
-        [TestMethod()]
+        [TestMethod()] // Jay
         public void emailCheckTest()
         {
             Assert.IsTrue(users.emailCheck("test1@test.nl"));
